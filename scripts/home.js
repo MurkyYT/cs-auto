@@ -1,6 +1,6 @@
-onload = loadChangelog
-function loadChangelog() {
-  getReleasesDescription("murkyyt", "csauto")
+onload = loadReadme
+function loadReadme() {
+  getReadme()
 }
 function httpGet(theUrl, callback) {
   if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
@@ -18,33 +18,30 @@ function httpGet(theUrl, callback) {
   xmlhttp.open("GET", theUrl, false);
   xmlhttp.send();
 }
-function getReleasesDescription(username, repo) {
-  let url = `https://api.github.com/repos/${username}/${repo}/releases`;
-  let result = []
+function getReadme() {
+  let url = `https://raw.githubusercontent.com/MurkyYT/CSAuto/master/README.md`;
   httpGet(url, function (resp) {
-    split = resp.split("\"body\": \"")
-    for (let index = 1; index < split.length; index++) {
-      let res = split[index].split('}')[0].replaceAll("\\\"", "\"").replaceAll("\\r", "\r").replaceAll("\\n", "\n");
-      res = res.split("\"mentions_count\"")[0]
-      res = res.split("[VirusTotal")[0]
-      res = res.substring(0, res.length - 4)
-
-      converter = new showdown.Converter(),
-        html = converter.makeHtml(res.split("**Full Changelog")[0]);
-      result[index - 1] = html
-      document.body.insertAdjacentHTML('beforeend', html)
-    }
+    converter = new showdown.Converter(),
+      html = converter.makeHtml(resp);
+    document.body.insertAdjacentHTML('beforeend', html)
   });
   var elems = document.body.getElementsByTagName("*");
   for (let index = 0; index < elems.length; index++) {
     const element = elems[index];
+    if (element.nodeName == "IMG") {
+      if (element.src.split('/').slice(-1) == "menuimage.png") {
+        element.src = "images/menuimage.png"
+      }
+      if (element.src == "https://github.com/machiav3lli/oandbackupx/blob/034b226cea5c1b30eb4f6a6f313e4dadcbb0ece4/badge_github.png") {
+        element.src = "images/badge_github.png"
+      }
+    }
     if (element.nodeName == "A") {
       if (element.hasAttribute("href") && element.getAttribute("href").substring(0, "https://".length) == "https://") {
         element.className = "link"
       }
     }
   }
-  return result
 }
 
 ;/*! showdown v 2.0.0 - 10-03-2022 */

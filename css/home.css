@@ -1,0 +1,38 @@
+li
+{
+  color: white;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 120%;
+}
+h1
+{
+  color: #04AA6D;
+  font-family:'Courier New', Courier, monospace;
+  font-size: 200%;
+}
+h2
+{
+  color: #04AA6D;
+  font-family:'Courier New', Courier, monospace;
+}
+h3
+{
+  color: #04AA6D;
+  font-family:'Courier New', Courier, monospace;
+}
+a,p
+{
+  color: white;
+}
+.link:visited {
+    /* Center horizontally*/
+    color:  #04AA6D;
+  }
+  .link:link {
+    /* Center horizontally*/
+    color:  #04AA6D;
+  }
+ .link:hover {
+    /* Center horizontally*/
+    color:  #00ffa2;
+  }
