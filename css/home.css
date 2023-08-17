@@ -20,9 +20,14 @@ h3
   color: #04AA6D;
   font-family:'Courier New', Courier, monospace;
 }
-a,p
+a
 {
   color: white;
+}
+p
+{
+  color: white;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 .link:visited {
     /* Center horizontally*/
