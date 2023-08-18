@@ -1,6 +1,6 @@
 onload = loadReadme
 function loadReadme() {
-  getReadme()
+  getFaq()
 }
 function httpGet(theUrl, callback) {
   if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
@@ -18,30 +18,13 @@ function httpGet(theUrl, callback) {
   xmlhttp.open("GET", theUrl, false);
   xmlhttp.send();
 }
-function getReadme() {
+function getFaq() {
   let url = `https://raw.githubusercontent.com/MurkyYT/CSAuto/master/README.md`;
   httpGet(url, function (resp) {
     converter = new showdown.Converter(),
-      html = converter.makeHtml(resp);
-    document.body.insertAdjacentHTML('beforeend', html)
+      html = converter.makeHtml(resp.split("<a href=\"https://github.com/murkyyt/csauto/releases\"><img src=\"https://github.com/machiav3lli/oandbackupx/blob/034b226cea5c1b30eb4f6a6f313e4dadcbb0ece4/badge_github.png\" height=\"80\" alt=\"Get On Github\"></a>")[1].split("</p>")[1].split("## Suggestions")[0]);
+    document.getElementById("faq-section").insertAdjacentHTML('beforeend', html)
   });
-  var elems = document.body.getElementsByTagName("*");
-  for (let index = 0; index < elems.length; index++) {
-    const element = elems[index];
-    if (element.nodeName == "IMG") {
-      if (element.src.split('/').slice(-1) == "menuimage.png") {
-        element.src = "images/menuimage.png"
-      }
-      if (element.src == "https://github.com/machiav3lli/oandbackupx/blob/034b226cea5c1b30eb4f6a6f313e4dadcbb0ece4/badge_github.png") {
-        element.src = "images/badge_github.png"
-      }
-    }
-    if (element.nodeName == "A") {
-      if (element.hasAttribute("href") && element.getAttribute("href").substring(0, "https://".length) == "https://") {
-        element.className = "link"
-      }
-    }
-  }
 }
 
 ;/*! showdown v 2.0.0 - 10-03-2022 */

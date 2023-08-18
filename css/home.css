@@ -41,3 +41,102 @@ p
     /* Center horizontally*/
     color:  #00ffa2;
   }
+  .text-centered {
+    text-align: center;
+}
+.list-centered
+{
+  display: inline-block;
+  text-align: left;
+}
+.feature {
+  display: flex; 
+}
+.col-1{
+  flex: 1;
+}
+.col-1.white {
+  background-color: white;
+  flex: 1;
+  .h2
+  {
+    margin-left: 5%;
+    margin-right: 5%;
+    color: #333;
+  }
+  .h1
+  {
+    font-weight: bold;
+    text-decoration: underline;
+    margin-left: 5%;
+    margin-right: 5%;
+    color: #333;
+  }
+}
+.col-1.black {
+  background-color: #333;
+  flex: 1;
+  .h2
+  {
+    margin-left: 5%;
+    margin-right: 5%;
+    color: white;
+  }
+  .h1
+  {
+    font-weight: bold;
+    margin-left: 5%;
+    margin-right: 5%;
+    text-decoration: underline;
+    color: white;
+  }
+}
+.col-2.white
+{
+  background-color: white;
+  flex: 1;
+  .h2
+  {
+    margin-left: 5%;
+    margin-right: 5%;
+    color: #333;
+  }
+  .h1
+  {
+    font-weight: bold;
+    margin-left: 5%;
+    text-decoration: underline;
+    margin-right: 5%;
+    color: #333;
+  }
+}
+.col-2.black
+{
+  background-color: #333;
+  flex: 1;
+  .h2
+  {
+    margin-left: 5%;
+    margin-right: 5%;
+    color: white;
+  }
+  .h1
+  {
+    margin-left: 5%;
+    margin-right: 5%;
+    font-weight: bold;
+    text-decoration: underline;
+    color: white;
+  }
+}
+.col-2 {
+  flex: 1;
+  .white
+  {
+    color: white;
+  }
+  .black
+  {
+    color: #333;
+  }
+}
