@@ -25,6 +25,15 @@ function getFaq() {
       html = converter.makeHtml(resp.split("<a href=\"https://github.com/murkyyt/csauto/releases\"><img src=\"https://github.com/machiav3lli/oandbackupx/blob/034b226cea5c1b30eb4f6a6f313e4dadcbb0ece4/badge_github.png\" height=\"80\" alt=\"Get On Github\"></a>")[1].split("</p>")[1].split("## Suggestions")[0]);
     document.getElementById("faq-section").insertAdjacentHTML('beforeend', html)
   });
+  var elems = document.body.getElementsByTagName("*");
+  for (let index = 0; index < elems.length; index++) {
+    const element = elems[index];
+    if (element.nodeName == "A") {
+      if (element.hasAttribute("href") && element.getAttribute("href").substring(0, "https://".length) == "https://") {
+        element.className = "link"
+      }
+    }
+  }
 }
 
 ;/*! showdown v 2.0.0 - 10-03-2022 */
