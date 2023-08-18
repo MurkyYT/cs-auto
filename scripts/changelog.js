@@ -39,7 +39,7 @@ function getReleasesDescription(username, repo) {
   for (let index = 0; index < elems.length; index++) {
     const element = elems[index];
     if (element.nodeName == "A") {
-      if (element.hasAttribute("href") && element.getAttribute("href").substring(0, "https://".length) == "https://") {
+      if (element.hasAttribute("href") && element.getAttribute("href").substring(0, "https://".length) == "https://" &&  !element.getAttribute("href")== "https://murkyyt.github.io/cs-auto/") {
         element.className = "link"
       }
     }
