@@ -7,7 +7,7 @@ function loadChangelog() {
     };
     console.info(window.mobileCheck())
     if(window.mobileCheck()){
-      window.location = "https://murkyyt.github.io/cs-auto/mobile";
+      window.location = "https://csauto.netlify.app/mobile";
     }
   getReleasesDescription("murkyyt", "csauto")
 }
