@@ -5,17 +5,23 @@ li
   font-size: 120%;
   margin-left: 75px;
 }
-h3
+strong
+{
+  color: white;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+h2,h3
 {
   color: #04AA6D;
   font-family:'Courier New', Courier, monospace;
   font-size: 200%;
   margin-left: 50px;
 }
-h2
+h1
 {
   color: #04AA6D;
   font-family:'Courier New', Courier, monospace;
+  font-size: 250%;
   margin-left: 50px;
 }
 p
