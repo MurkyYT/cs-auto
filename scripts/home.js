@@ -30,8 +30,8 @@ function httpGet(theUrl, callback) {
 function getFaq() {
   let url = `https://raw.githubusercontent.com/MurkyYT/CSAuto/master/README.md`;
   httpGet(url, function (resp) {
-    converter = new showdown.Converter(),
-      html = converter.makeHtml(resp.split("<a href=\"https://github.com/murkyyt/csauto/releases\"><img src=\"https://github.com/machiav3lli/oandbackupx/blob/034b226cea5c1b30eb4f6a6f313e4dadcbb0ece4/badge_github.png\" height=\"80\" alt=\"Get On Github\"></a>")[1].split("</p>")[1].split("## Suggestions")[0]);
+    converter = new showdown.Converter();
+    html = converter.makeHtml(resp.split("## FAQ")[1].split("## Suggestions")[0]);
     document.getElementById("faq-section").insertAdjacentHTML('beforeend', html)
   });
   var elems = document.body.getElementsByTagName("*");
