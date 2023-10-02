@@ -7,7 +7,7 @@ function loadReadme() {
     };
     console.info(window.mobileCheck())
     if(window.mobileCheck()){
-      window.location = "https://csauto.netlify.app/mobile";
+      window.location = "https://csauto.vercel.app/mobile";
     }
   getFaq()
 }

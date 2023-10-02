@@ -7,7 +7,7 @@ function loadChangelog() {
     };
     console.info(window.mobileCheck())
     if(window.mobileCheck()){
-      window.location = "https://csauto.netlify.app/mobile";
+      window.location = "https://csauto.vercel.app/mobile";
     }
   getReleasesDescription("murkyyt", "csauto")
 }
@@ -48,7 +48,7 @@ function getReleasesDescription(username, repo) {
   for (let index = 0; index < elems.length; index++) {
     const element = elems[index];
     if (element.nodeName == "A") {
-      if (element.hasAttribute("href") && element.getAttribute("href").substring(0, "https://".length) == "https://" &&  element.getAttribute("href") != "https://csauto.netlify.app/") {
+      if (element.hasAttribute("href") && element.getAttribute("href").substring(0, "https://".length) == "https://" &&  element.getAttribute("href") != "https://csauto.vercel.app/") {
         element.className = "link"
       }
     }
