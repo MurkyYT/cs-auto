@@ -10,6 +10,19 @@ function loadReadme() {
       window.location = "https://csauto.vercel.app/mobile";
     }
   getFaq()
+  var downloadButton = document.getElementById("download-button");
+  downloadButton.innerHTML = downloadButton.innerHTML.replace("{VER}",GetLatestTag())
+  downloadButton.style.display = null;
+}
+function GetLatestTag()
+{
+  var url = "https://api.github.com/repos/murkyyt/csauto/releases/latest";
+  var result = "";
+  httpGet(url, function (resp) 
+  {
+    result = resp.split("\"tag_name\": \"")[1].split('"')[0];
+  });
+  return result;
 }
 function httpGet(theUrl, callback) {
   if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
