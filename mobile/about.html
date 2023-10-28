@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>CSAuto</title>
+    <title>About CSAuto</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, height=device-height" />
     <meta name="keywords"
@@ -10,9 +10,8 @@
     <meta name="author" content="Murky" />
     <meta name="description"
         content="CSAuto is software to automate usual CS in game tasks, such as accepting match, buying items and much more!" />
-    <link rel="icon" type="image/x-icon" href="icons/main.ico">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/mobile.css">
+    <link rel="icon" type="image/x-icon" href="../icons/main.ico">
+    <link rel="stylesheet" href="../css/mobile.css">
     <script language=javascript>
         window.mobileCheck = function() {
         let check = false;
@@ -21,20 +20,43 @@
         };
         function redirect() {
             if(!window.mobileCheck()){
-            window.location = "https://csauto.vercel.app/";
+            window.location = "https://csauto.vercel.app/about";
             }
         }
     </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Top Navigation Menu -->
+    <div class="topnav">
+        <a class="top">CSAuto</a>
+        <div id="myLinks">
+            <a href="https://csauto.vercel.app/mobile">Home</a>
+            <a href="https://csauto.vercel.app/mobile/changelog">Changelog</a>
+            <a href="https://csauto.vercel.app/mobile/about" class="active">About</a>
+        </div>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+    </div>
+    <script>
+        function myFunction() {
+          var x = document.getElementById("myLinks");
+          if (x.style.display === "block") {
+            x.style.display = "none";
+          } else {
+            x.style.display = "block";
+          }
+        }
+      </script>
 </head>
 
 <body onload="redirect()">
     <div class="center">
-        <h1 class="center-text">This site is not yet optimized for mobile :)</h1>
-        <h1 class="center-text">Please visit the <a href="https://github.com/MurkyYT/CSAuto"
-            class="center-text-link">GitHub page</a> to get info about CSAuto on mobile</h1>
-        <h1 class="center-text">Created by <a href="https://github.com/MurkyYT" class="center-text-link">Murky</a></h1>
-    </div>
-
+    <h1 class="center-text">CSAuto<br><br>
+        Software to automate usual CS in game tasks, such as accepting match, buying items and much more!<br><br><br>
+        Created by <a href="https://github.com/MurkyYT" class="center-text-link">Murky</a><br><br><br>
+        Source code available on <a href="https://github.com/MurkyYT/CSAuto" class="center-text-link">GitHub</a>
+    </h1>
+</div>
 </body>
 
 </html>

@@ -4,6 +4,7 @@ body {
 }
 /* Add a black background color to the top navigation */
 .topnav {
+  z-index: 5;
   position: fixed;
   top: 0px;
   width: 100%;
