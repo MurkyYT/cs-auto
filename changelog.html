@@ -32,26 +32,29 @@
     window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
   </script>
   <script defer src="/_vercel/insights/script.js"></script>
-    <div class="topnav">
-
-        <!-- Centered link -->
-        <div class="topnav-centered">
-            <a href="https://csauto.vercel.app/">Home</a>
-        </div>
-
-        <!-- Left-aligned links (default) -->
-        <a class="active" href="changelog">Changelog</a>
-
-        <!-- Right-aligned links -->
-        <div class="topnav-right">
-            <a href="about">About</a>
-        </div>
-
-    </div>
-    <script type="text/javascript" src="scripts/changelog.js" async></script>
+  <script src="https://cdn.jsdelivr.net/npm/showdown@2.1.0/dist/showdown.min.js"></script>
+  <script data-main="scripts/changelog.js" src="scripts/require.js"></script>
 </head>
 
 <body>
+  <div class="topnav">
+
+    <!-- Centered link -->
+    <div class="topnav-centered">
+        <a href="https://csauto.vercel.app/">Home</a>
+    </div>
+
+    <!-- Left-aligned links (default) -->
+    <a class="active" href="changelog">Changelog</a>
+
+    <!-- Right-aligned links -->
+    <div class="topnav-right">
+        <a href="about">About</a>
+    </div>
+
+</div>
+<br><br>
+<noscript><a class="button" href="https://github.com/MurkyYT/CSAuto#faq">Read ChangeLog on GitHub</a></noscript>
 </body>
 
 </html>

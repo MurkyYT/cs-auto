@@ -33,7 +33,8 @@
         </div>
 
     </div>
-    <script type="text/javascript" src="scripts/home.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/showdown@2.1.0/dist/showdown.min.js"></script>
+    <script data-main="scripts/home.js" src="scripts/require.js"></script>
     <script>
         window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
       </script>
@@ -46,20 +47,20 @@
         <img src="icons/main.ico" alt="CSAuto" height="128" width="128">
     </div>
     <br>
-    <p align="center">  
+    <div align="center">  
         <a href="https://github.com/MurkyYT/CSAuto"><img  alt="GitHub Repo stars" src="https://img.shields.io/github/stars/murkyyt/csauto?style=for-the-badge&logo=github"></a>
         <br>
         <a href="https://github.com/MurkyYT/CSAuto/releases"><img width="auto" src="https://img.shields.io/github/downloads/murkyyt/csauto/total?color=brightgreen&logo=github&label=Total%20downloads&style=for-the-badge" alt="Total Downloads"></a>
         <br>
         <a href="https://discord.gg/57ZEVZgm5W"><img src="https://dcbadge.vercel.app/api/server/57ZEVZgm5W"></a>
-      </p>
+    </div>
     <div class="text-centered">
         <a href="#faq"><img src="images/faq.png" height="100" alt="FAQ"></a>
     </div>
     <br>
     <div class="text-centered">
         <!-- <a href="https://github.com/murkyyt/csauto/releases/latest"><img src="images/badge_github.png" height="100" alt="Get On Github"></a> -->
-        <button style="display: none;" id="download-button" onclick="window.location = 'https://github.com/murkyyt/csauto/releases/latest'; " type="button" class="button">Download (v{VER})</button>
+        <a id="download-button" href="https://github.com/murkyyt/csauto/releases/latest" type="button" class="button">Download</a>
     </div>
     <br>
     <br>
@@ -122,6 +123,9 @@
     <section class="text-centered" >
         <section class="list-centered" id="faq-section">
             <h1 class="title" id="faq">FAQ</h1>
+            <noscript>
+                <a class="button" href="https://github.com/MurkyYT/CSAuto#faq">Read FAQ on GitHub</a>
+            </noscript>
         </section>
     </section>
 </body>
