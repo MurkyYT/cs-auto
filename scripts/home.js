@@ -7,7 +7,7 @@ function loadReadme() {
     return check;
     };
     console.info(window.mobileCheck());
-    if(window.mobileCheck() && window.location != "https://csauto.vercel.app/mobile"){
+    if(window.mobileCheck() && !window.location.href.includes("mobile")){
       window.location = "https://csauto.vercel.app/mobile";
     }
   var downloadButton = document.getElementById("download-button");
