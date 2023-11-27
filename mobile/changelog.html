@@ -30,18 +30,7 @@
     </script>
     <script defer src="/_vercel/insights/script.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- Top Navigation Menu -->
-    <div class="topnav">
-        <a class="top">CSAuto</a>
-        <div id="myLinks">
-            <a href="https://csauto.vercel.app/mobile">Home</a>
-            <a href="https://csauto.vercel.app/mobile/changelog" class="active">Changelog</a>
-            <a href="https://csauto.vercel.app/mobile/about" >About</a>
-        </div>
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-          <i class="fa fa-bars"></i>
-        </a>
-    </div>
+  
     <script>
         function myFunction() {
           var x = document.getElementById("myLinks");
@@ -52,12 +41,24 @@
           }
         }
       </script>
-      <script type="text/javascript" src="../scripts/changelog.js" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/showdown@2.1.0/dist/showdown.min.js"></script>
+    <script data-main="../scripts/changelog.js" src="../scripts/require.js"></script>
 </head>
 
 <body onload="redirect()">
-    
+  <!-- Top Navigation Menu -->
+  <div class="topnav">
+    <a class="top">CSAuto</a>
+    <div id="myLinks">
+        <a href="https://csauto.vercel.app/mobile">Home</a>
+        <a href="https://csauto.vercel.app/mobile/changelog" class="active">Changelog</a>
+        <a href="https://csauto.vercel.app/mobile/about" >About</a>
+    </div>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
 </div>
+<noscript><br><a class="button" href="https://github.com/MurkyYT/CSAuto#faq">Read ChangeLog on GitHub</a></noscript>
 </body>
 
 </html>

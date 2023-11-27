@@ -52,6 +52,8 @@
           }
         }
       </script>
+    <script src="https://cdn.jsdelivr.net/npm/showdown@2.1.0/dist/showdown.min.js"></script>
+    <script data-main="../scripts/home.js" src="../scripts/require.js"></script>
 </head>
 
 <body onload="redirect()">
@@ -69,7 +71,7 @@
       </p>
     <br>
     <div class="text-centered">
-        <button id="download-button" onclick="window.location = 'https://github.com/murkyyt/csauto/releases/latest'; " type="button" class="button">Download</button>
+        <a id="download-button" href="https://github.com/murkyyt/csauto/releases/latest" type="button" class="button">Download</button>
     </div>
     <br>
     <br>
@@ -112,6 +114,14 @@
             <h2 class="h2">In addition, you can add one custom button with a custom link</h2>
             <img src="../images/discord-rpc/final-image.png" alt="Discord Rich Presence images" style="width: 100vw; height: 23vh;">
     </div>
+    <section class="text-centered" >
+        <section class="list-centered" id="faq-section">
+            <h1 class="title" id="faq">FAQ</h1>
+            <noscript>
+                <a class="button" href="https://github.com/MurkyYT/CSAuto#faq">Read FAQ on GitHub</a>
+            </noscript>
+        </section>
+    </section>
 </body>
 
 </html>
