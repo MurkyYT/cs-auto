@@ -12,6 +12,25 @@
     --bg-secondary: #20282D;
 }
 
+nav {
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    background-color: var(--bg-secondary);
+    z-index: 2;
+}
+
+nav h4 {
+    /*lil crutch*/
+    @media screen and (max-width: 400px) {
+        display: none;
+    }
+}
+
+main {
+    margin-top: 75px;
+}
+
 section.BadgesDownload div {
     margin-bottom: 0.5em;
 }
