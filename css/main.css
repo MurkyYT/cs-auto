@@ -31,6 +31,8 @@ main {
     margin-top: 75px;
 }
 
+/* index.html */
+
 section.BadgesDownload div {
     margin-bottom: 0.5em;
 }
@@ -121,4 +123,28 @@ section.FeaturesSection {
 div#FAQ {
     margin-top: 0;
     padding-top: 0;
+}
+
+/* About modal */
+
+[role="link"] {
+    cursor: pointer;
+}
+
+input#about-modal-open {
+    display: none;
+}
+
+input#about-modal-open:checked ~ #modal-about {
+	display: flex;
+}
+
+dialog footer {
+    height: min-content;
+    margin: 0;
+    padding: 0;
+}
+
+dialog footer p {
+    font-size: small;
 }
