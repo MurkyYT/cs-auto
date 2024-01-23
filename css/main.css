@@ -99,6 +99,12 @@ section.FeaturesSection {
     }
 }
 
+.col-2 p, .col-2 h2 {
+    @media screen and (min-width: 800px) {
+        padding-left: 0.25em;
+    }
+}
+
 .feature h2, .feature h3 {
     margin-bottom: 3px;
 }
