@@ -1,0 +1,99 @@
+[data-theme=light], :root:not([data-theme=dark]) {
+    --bg-secondary: #C5EEDA;
+}
+
+@media only screen and (prefers-color-scheme: dark) {
+    :root:not([data-theme]) {
+        --bg-secondary: #20282D;
+    }
+}
+
+[data-theme=dark] {
+    --bg-secondary: #20282D;
+}
+
+section.BadgesDownload div {
+    margin-bottom: 0.5em;
+}
+
+.badges img {
+    margin-right: 0.7em;
+    margin-bottom: 0.3em;
+}
+
+section.FeaturesSection {
+    width: 100%;
+    padding: 0;
+}
+
+.row-2 {
+    background-color: var(--bg-secondary);
+}
+
+.row-2 > div {
+    background-color: var(--bg-secondary);
+}
+
+.feature {
+    display: inline;
+    @media screen and (min-width: 800px) {
+        display: flex;
+    }
+}
+
+.feature p {
+    font-size: xx-large;
+    font-weight: 400;
+    
+    @media screen and (max-width: 1437px) {
+        font-size: x-large;
+    }
+}
+
+.col-1 {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    /*to-responsive*/
+    @media screen and (min-width: 800px) {
+        float: left;
+        top: 0;
+        width: 50%; 
+    }
+}
+
+.col-1 video, .col-1 img {
+    padding-right: 3px;
+    @media screen and (min-width: 800px) {
+        padding: 0px;
+    }
+}
+
+.col-2 {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    @media screen and (min-width: 800px) {
+        float: right;
+        top: 0;
+        width: 50%;
+    }
+}
+
+.feature h2, .feature h3 {
+    margin-bottom: 3px;
+}
+
+.feature video, .feature img {
+    width: 100%;
+    height: 100%;
+}
+
+.feature h2 {
+    text-decoration: underline;
+}
+
+div#FAQ {
+    margin-top: 0;
+    padding-top: 0;
+}
