@@ -35,6 +35,9 @@ class BaseDataProvider:
     
     def get_changelog(self) -> list[str]:
         raise NotImplementedError
+    
+    def get_colors(self) -> str:
+        raise NotImplementedError
 
 
 class RawGithubProvider(BaseDataProvider):
@@ -49,6 +52,10 @@ class RawGithubProvider(BaseDataProvider):
     def get_changelog(self) -> list[str]:
         changelog_md = self.get_changelog_md()
         return list(changelog_md.split("<!--Version split-->"))
+    
+    def get_colors(self) -> str:
+        resp = httpx.get(url=URLS.RAW_COLORS)
+        return resp.text
 
 
 class LocalFileProvider(RawGithubProvider):
@@ -59,3 +66,6 @@ class LocalFileProvider(RawGithubProvider):
     def get_changelog_md(self) -> str:
         with open(os.environ["CSAUTO_CHANGELOG"], mode="r", encoding="utf-8") as f:
             return f.read()
+    
+    def get_colors(self) -> str:
+        return "54,183,82\n59,198,90"
