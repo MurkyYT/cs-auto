@@ -1,5 +1,12 @@
 {
-    "$schema": "https://openapi.vercel.sh/vercel.json",
-    "outputDirectory": "www",
-    "cleanUrls": true
+	"$schema": "https://openapi.vercel.sh/vercel.json",
+	"outputDirectory": "www",
+	"cleanUrls": true,
+	"redirects": [
+		{
+			"source": "/mobile",
+			"destination": "/",
+			"permanent": true
+		}
+	]
 }
