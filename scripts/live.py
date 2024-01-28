@@ -33,6 +33,10 @@ async def changelog():
 async def colors():
     return PlainTextResponse(rend.provider.get_colors())
 
+@app.get("/api/version")
+async def version():
+    return PlainTextResponse(rend.provider.get_version())
+
 # poetry run uvicorn live_dev:app --reload --reload-dir ..
 if __name__ == "__main__":
     uvicorn.run(app=app)

@@ -29,3 +29,6 @@ class URLS:
     RAW_COLORS = RAW_GH.join("Data/colors")
     RAW_README: dict[LANGUAGES, URL] = {LANGUAGES.EN: RAW_GH.join("README.md"),
                                         LANGUAGES.RU: RAW_GH.join("Docs/README_ru.md")}
+    
+    REPO_API = URL(f"https://api.github.com/repos/{CSAUTO_GH_REPO}/")
+    RELEASES_API = REPO_API.join("releases")

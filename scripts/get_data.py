@@ -1,4 +1,4 @@
-
+from datetime import datetime
 import os
 import httpx
 from loguru import logger
@@ -38,6 +38,9 @@ class BaseDataProvider:
     
     def get_colors(self) -> str:
         raise NotImplementedError
+    
+    def get_version(self) -> str:
+        raise NotImplementedError
 
 
 class RawGithubProvider(BaseDataProvider):
@@ -56,6 +59,12 @@ class RawGithubProvider(BaseDataProvider):
     def get_colors(self) -> str:
         resp = httpx.get(url=URLS.RAW_COLORS)
         return resp.text
+    
+    def get_version(self) -> str:
+        raw_resp = httpx.get(URLS.RELEASES_API, headers={"X-GitHub-Api-Version": "2022-11-28"})
+        logger.debug(f"Releases response: {raw_resp.status_code}")
+        resp = raw_resp.json()
+        return max(resp, key=lambda x: datetime.fromisoformat(x['created_at']))['tag_name']
 
 
 class LocalFileProvider(RawGithubProvider):
@@ -69,3 +78,6 @@ class LocalFileProvider(RawGithubProvider):
     
     def get_colors(self) -> str:
         return "54,183,82\n59,198,90"
+    
+    def get_version(self) -> str:
+        return "7.0.0"
