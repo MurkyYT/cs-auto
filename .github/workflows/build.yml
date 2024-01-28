@@ -1,0 +1,30 @@
+name: Build
+
+on:
+    schedule:
+        - cron: '00 15 * * *'
+    workflow_dispatch:
+
+env:
+    PYTHON_VER: "3.12"
+    POETRY_VER: "1.7.1"
+
+jobs:
+    use_cache:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+            - name: "Setup Python, Poetry and Dependencies"
+              uses: packetcoders/action-setup-cache-python-poetry@v1.1.0
+              with:
+                python-version: ${{ env.PYTHON_VER }}
+                poetry-version: ${{ env.POETRY_VER }}
+            - name: Build
+              run: poetry run scripts/bundle.py
+            - name: "Commit & Push"
+              uses: EndBug/add-and-commit@v9
+              with:
+                add: 'www'
+                default_author: github_actions
+                message: "Build static html"
