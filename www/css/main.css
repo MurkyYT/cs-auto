@@ -27,6 +27,10 @@ nav h4 {
     }
 }
 
+html {
+    scroll-padding-top: 100px;  /* Jump to section & ignore nav */
+}
+
 main {
     margin-top: 75px;
 }

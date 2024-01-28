@@ -1,0 +1,12 @@
+{% extends "base.jinja" %}
+{% block main %}
+<main class="container">
+<h4>Changelog also available as <a href="https://github.com/MurkyYT/CSAuto/blob/master/Docs/FullChangelog.MD">single .MD file on GitHub</a></h4>
+<hr>
+{% for changelog in changelogs %}
+<article>
+    {{ changelog }}
+</article>
+{% endfor %}
+</main>
+{% endblock %}

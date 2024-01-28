@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSAuto</title>
@@ -8,7 +9,7 @@
     <!--<meta name="keywords" content="CS, CS2, cs, cs2, automation, gsi, csgsi, Counter-Strike, Counter-Strike 2, CS2, counter strike, software, application, app">
     <meta name="description" content="CSAuto is software to automate usual CS2 in game tasks, such as accepting match, buying items and much more!">
     <meta name="author" content="Murky">-->
-    <link rel="icon" type="image/x-icon" href="public/logo.ico">
+    <link rel="icon" type="image/x-icon" href="public/favicon.ico">
 
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
@@ -16,9 +17,10 @@
     <!--Insert Vercel tracker-->
 
     <!--Insert here JSON-LD (https://schema.org/SoftwareApplication || https://developers.google.com/search/docs/appearance/structured-data/software-app || https://yandex.ru/support/webmaster/supported-schemas/software.html)-->
-
+    
 </head>
 <body>
+    
     <input type="checkbox" id="about-modal-open">
     <dialog id="modal-about">
         <article>
@@ -46,11 +48,14 @@
             <li><label role="link" for="about-modal-open">About</label></li>
         </ul>
     </nav>
-    <main class="container">
-        <h4>Changelog also available as <a href="https://github.com/MurkyYT/CSAuto/blob/master/Docs/FullChangelog.MD">single .MD file on GitHub</a></h4>
-        <hr>
-        <article>
-        <h3 id="version-2-0-8-changelog">Version 2.0.8 changelog</h3>
+    
+    
+<main class="container">
+<h4>Changelog also available as <a href="https://github.com/MurkyYT/CSAuto/blob/master/Docs/FullChangelog.MD">single .MD file on GitHub</a></h4>
+<hr>
+
+<article>
+    <h3>Version 2.0.8 changelog</h3>
 <ul>
 <li>Markdown parser updated, changelog now looks a bit different</li>
 <li>Notify icon text now shows only <code>CSAuto</code></li>
@@ -58,7 +63,8 @@
 <li>Fixed mobile app crashing when getting <code>GSI</code> info</li>
 <li>Fix <code>GSI</code> parsing bug when weapon has no type</li>
 <li>You can import and export settings</li>
-<li>New Auto Buy menu!<ul>
+<li>New Auto Buy menu!
+<ul>
 <li>The new <code>auto buy menu</code> looks like the actual <code>buy menu</code></li>
 <li>You can enable as of right now auto buying of <code>Kevlar</code> <code>Kevlar &amp; Helmet</code> <code>Zeus</code> <code>Decoy</code> <code>Molotov\Incendiary</code> <code>HE Grenade</code> <code>Flashbang</code> <code>Smoke</code> and <code>Defuse Kit</code></li>
 <li>You can arrange custom order of weapons such as <code>Pistols</code> <code>Mid Tier</code> and <code>Rifles</code> and enable auto buying of them!</li>
@@ -71,61 +77,72 @@
 </ul>
 </li>
 </ul>
+
 </article>
+
 <article>
-<h3 id="version-2-0-7-changelog">Version 2.0.7 changelog</h3>
+    <h3>Version 2.0.7 changelog</h3>
 <ul>
 <li>Fix with app crashing when <code>steamapi.exe</code> cant be launched</li>
 <li>Added menu item in right click menu to launch <code>CS2</code> from <code>CSAuto</code></li>
 <li>Added an option to shutdown <code>CSAuto</code> after exiting <code>CS2</code></li>
-<li>Using raw data to load changelog and version, github api limits shouldn&#39;t be hit now</li>
+<li>Using raw data to load changelog and version, github api limits shouldn't be hit now</li>
 <li><code>CSAuto</code> now checks whether your <code>Windows</code> installation is in dark theme and if so applies dark theme to it self as well</li>
 <li>Language files are being compressed with <a href="https://en.wikipedia.org/wiki/Gzip"><code>GZip</code></a> compression to save space</li>
 </ul>
-<h2 id="what-s-changed">What&#39;s Changed</h2>
+<h2>What's Changed</h2>
 <ul>
 <li>Add FullChangelog and Version + GH Actions by @NoPlagiarism in <a href="https://github.com/MurkyYT/CSAuto/pull/26">https://github.com/MurkyYT/CSAuto/pull/26</a></li>
 </ul>
+
 </article>
+
 <article>
-<h3 id="version-2-0-6-changelog">Version 2.0.6 changelog</h3>
+    <h3>Version 2.0.6 changelog</h3>
 <ul>
 <li>Optimzation of program idle state</li>
 <li>Fix with parsing GSI file</li>
 <li>Discord RPC now updates everything when in game (details and state)</li>
 <li>Fix with Discord RPC which crashes when there are more than 128 characters in the state or details</li>
 <li>Discord customization GUI now has the same limit of 128 characters</li>
-<li>Added current player <code>Name</code> <code>Kills</code> <code>Deaths</code> and <code>MVPS&#39;s</code> to discord rich presence templates</li>
+<li>Added current player <code>Name</code> <code>Kills</code> <code>Deaths</code> and <code>MVPS's</code> to discord rich presence templates</li>
 <li>Saving to error log when there is an exception on startup so it would be easier to investigate the issue</li>
-<li>Updated startup error message </li>
+<li>Updated startup error message</li>
 <li>Looks like the old way of capturing screen works, the app defaults to the new one, if the new one does not work try to enable the old way</li>
 <li>Languages are now saved in .txt files in a folder named <code>resource</code></li>
-<li>New launch option<ul>
-<li><code>--language [language name]</code> - Change app language to the one specifed, doesn&#39;t change the settings</li>
+<li>New launch option
+<ul>
+<li><code>--language [language name]</code> - Change app language to the one specifed, doesn't change the settings</li>
 </ul>
 </li>
 <li>Optimized memory and cpu usage even more</li>
 <li>Auto buy now should work better after half change and on match start</li>
 </ul>
+
 </article>
+
 <article>
-<h3 id="version-2-0-5a-changelog">Version 2.0.5a changelog</h3>
+    <h3>Version 2.0.5a changelog</h3>
 <ul>
-<li>I feel very ashamed but screen capture still crashes so <strong>now</strong> hopefully it will not as the DXGICapture lib doesn&#39;t use pointers anymore and i did some security precautions in the app itself, if it will still crash i will probably port the native c++ code to c#, unfortunately</li>
+<li>I feel very ashamed but screen capture still crashes so <strong>now</strong> hopefully it will not as the DXGICapture lib doesn't use pointers anymore and i did some security precautions in the app itself, if it will still crash i will probably port the native c++ code to c#, unfortunately</li>
 </ul>
+
 </article>
+
 <article>
-<h3 id="version-2-0-5-changelog">Version 2.0.5 changelog</h3>
+    <h3>Version 2.0.5 changelog</h3>
 <ul>
-<li>Changed default intaller location because can&#39;t create files in admin protected folders</li>
-<li>Showing a warning message when can&#39;t create files in admin protected folders</li>
+<li>Changed default intaller location because can't create files in admin protected folders</li>
+<li>Showing a warning message when can't create files in admin protected folders</li>
 <li>DXGICapture library update</li>
-<li>Fix #24 </li>
+<li>Fix #24</li>
 <li>Fix #25</li>
 </ul>
+
 </article>
+
 <article>
-<h3 id="version-2-0-4-changelog">Version 2.0.4 changelog</h3>
+    <h3>Version 2.0.4 changelog</h3>
 <ul>
 <li>Fix bug with spotify auto play</li>
 <li>Fix bug with color loading</li>
@@ -133,42 +150,51 @@
 <li>Added sending auto accept image debug to telegram</li>
 <li>Changelog now loads only when opening the changelog category</li>
 </ul>
+
 </article>
+
 <article>
-<h3 id="version-2-0-3-changelog">Version 2.0.3 changelog</h3>
+    <h3>Version 2.0.3 changelog</h3>
 <ul>
 <li>Discord Rich Presence map image now loads from the web</li>
-<li>Fixed a bug with <a href="https://developer.valvesoftware.com/wiki/Counter-Strike:_Global_Offensive_Game_State_Integration">GSI</a> which happens when GSI doesn&#39;t have the player category in it (for some reason?) which crashed the parsing</li>
-<li>Fixes #23 </li>
+<li>Fixed a bug with <a href="https://developer.valvesoftware.com/wiki/Counter-Strike:_Global_Offensive_Game_State_Integration">GSI</a> which happens when GSI doesn't have the player category in it (for some reason?) which crashed the parsing</li>
+<li>Fixes #23</li>
 </ul>
+
 </article>
+
 <article>
-<h3 id="version-2-0-2-changelog">Version 2.0.2 changelog</h3>
+    <h3>Version 2.0.2 changelog</h3>
 <ul>
 <li>App crash handling should be better now</li>
 <li>Settings now are saved per-user, and not per-location + per-user</li>
 <li>Optimized cpu usage of aplication after gui window opening and after closing cs2 when app was running</li>
 </ul>
+
 </article>
+
 <article>
-<h3 id="version-2-0-1-changelog">Version 2.0.1 changelog</h3>
+    <h3>Version 2.0.1 changelog</h3>
 <ul>
 <li>Fixes #22</li>
 </ul>
+
 </article>
+
 <article>
-<h3 id="version-2-0-0-changelog">Version 2.0.0 changelog</h3>
+    <h3>Version 2.0.0 changelog</h3>
 <p><strong>Counter-Strike 2 Released and so did CSAuto v2</strong></p>
 <ul>
-<li>In CSAuto 2.0.0 i&#39;ve changed how settings work and added a gui window</li>
-<li>Fixed some issues with the notification icon </li>
+<li>In CSAuto 2.0.0 i've changed how settings work and added a gui window</li>
+<li>Fixed some issues with the notification icon</li>
 <li>You can now customize Discord Rich Presence</li>
 <li>Added Buttons to Discord RPC! you can add one that you want. and there is another one which is mendatory which is a link to this repo</li>
 <li>Auto buy now waits untill you are not in chat/console</li>
 <li>Some optimizations there and here</li>
 <li>Unusual and rare crash fixes</li>
 <li>Overall better feeling and hopefully performance</li>
-<li>Added launch options<ul>
+<li>Added launch options
+<ul>
 <li><code>--show</code> - use to show guiwindow on startup</li>
 <li><code>--maximized</code> - use to make guiwindow always open maximized</li>
 </ul>
@@ -177,10 +203,10 @@
 <li>Not sure if everything works as it should and as it was earlier</li>
 <li>I would like you to send an issue if you encounter any bug or unusual behaviour</li>
 </ul>
-<h1 id="-important-notice-">⚠️Important Notice⚠️</h1>
-<h3 id="you-will-need-to-set-all-the-settings-again-as-i-added-company-name-to-the-assembly-">You will need to set all the settings again as i added company name to the assembly!</h3>
-<h1 id="_have-fun-playing-cs2-and-using-csauto-v2-_"><em>Have fun playing CS2 and using CSAuto v2 :)</em></h1>
-<h2 id="what-s-changed">What&#39;s Changed</h2>
+<h1>⚠️Important Notice⚠️</h1>
+<h3>You will need to set all the settings again as i added company name to the assembly!</h3>
+<h1><em>Have fun playing CS2 and using CSAuto v2 :)</em></h1>
+<h2>What's Changed</h2>
 <ul>
 <li>Merge master and source2 by @MurkyYT in <a href="https://github.com/MurkyYT/CSAuto/pull/3">https://github.com/MurkyYT/CSAuto/pull/3</a></li>
 <li>Design overhall and GUI addition by @MurkyYT in <a href="https://github.com/MurkyYT/CSAuto/pull/15">https://github.com/MurkyYT/CSAuto/pull/15</a></li>
@@ -189,42 +215,51 @@
 <li>Redisigned logo by @NoPlagiarism in <a href="https://github.com/MurkyYT/CSAuto/pull/21">https://github.com/MurkyYT/CSAuto/pull/21</a></li>
 <li>Getting CSAuto to work with Counter-Strike 2 by @MurkyYT in <a href="https://github.com/MurkyYT/CSAuto/pull/14">https://github.com/MurkyYT/CSAuto/pull/14</a></li>
 </ul>
+
 </article>
+
 <article>
-<h3 id="2-0-0-beta-6-changelog">2.0.0-beta.6 Changelog</h3>
+    <h3>2.0.0-beta.6 Changelog</h3>
 <ul>
 <li>Loading button colors from web, if cant load latest colors</li>
 <li>Some bug fixes</li>
 <li>Added button colors to debug window</li>
 </ul>
+
 </article>
+
 <article>
-<h3 id="2-0-0-beta-5-changelog">2.0.0-beta.5 Changelog</h3>
+    <h3>2.0.0-beta.5 Changelog</h3>
 <ul>
 <li>More fixes with DXGICapture (help)</li>
 <li>Should capture all exceptions now</li>
 <li>Fixed github logo by making it vector (@NoPlagiarism )</li>
-<li>Added launch options!<ul>
+<li>Added launch options!
+<ul>
 <li><code>--show</code> - use to show guiwindow on startup</li>
 <li><code>--maximized</code> - use to make guiwindow always open maximized</li>
 </ul>
 </li>
 <li>Added discord rpc buttons templates (Steam Profile, FaceitFinder profile, CSGOStats profile)</li>
 </ul>
-<h2 id="what-s-changed">What&#39;s Changed</h2>
+<h2>What's Changed</h2>
 <ul>
 <li>Make GitHub logo vector by @NoPlagiarism in <a href="https://github.com/MurkyYT/CSAuto/pull/19">https://github.com/MurkyYT/CSAuto/pull/19</a></li>
 </ul>
+
 </article>
+
 <article>
-<h3 id="2-0-0-beta-4-changelog">2.0.0-beta.4 Changelog</h3>
+    <h3>2.0.0-beta.4 Changelog</h3>
 <ul>
 <li>Latest CS2 Update changed accept button color, corrected for that</li>
 <li>Fixes with frame capture again, should work flawlessly now</li>
 </ul>
+
 </article>
+
 <article>
-<h3 id="2-0-0-beta-3-changelog">2.0.0-beta.3 Changelog</h3>
+    <h3>2.0.0-beta.3 Changelog</h3>
 <ul>
 <li>Some more memory optimizations!</li>
 <li>Some fixes when exiting from app</li>
@@ -233,9 +268,11 @@
 <li>Added discord rpc error logging as well</li>
 <li>Updated mobiles app in app title from <code>CS:GO</code> to <code>Counter-Strike 2</code></li>
 </ul>
+
 </article>
+
 <article>
-<h3 id="2-0-0-beta-2-changelog">2.0.0-beta.2 Changelog</h3>
+    <h3>2.0.0-beta.2 Changelog</h3>
 <ul>
 <li>Optimized app even more</li>
 <li>App should use less memory</li>
@@ -244,9 +281,11 @@
 <li>Fixed the readme</li>
 <li>Some fixes with translation</li>
 </ul>
+
 </article>
+
 <article>
-<h3 id="2-0-0-beta-1-changelog">2.0.0-beta.1 Changelog</h3>
+    <h3>2.0.0-beta.1 Changelog</h3>
 <ul>
 <li>Bug fix with frame capture</li>
 <li>Translation fix</li>
@@ -255,14 +294,209 @@
 <li>Changed to an actual <a href="https://github.com/Lachee/discord-rpc-csharp">Discord RPC .NET Library</a></li>
 <li>Changed from CS:GO icon to CS2 icon</li>
 </ul>
+
 </article>
+
 <article>
-<h3 id="version-2-0-0-beta-changelog">Version 2.0.0-beta changelog</h3>
-<p><strong>As Counter-Strike 2 is in kinda open beta, i decided to release 2.0.0-beta so that i can eliminate all bugs before cs2&#39;s full release!</strong>
+    <h3>Version 2.0.0-beta changelog</h3>
+<p><strong>As Counter-Strike 2 is in kinda open beta, i decided to release 2.0.0-beta so that i can eliminate all bugs before cs2's full release!</strong>
 <strong>I would like you to send an issue if you encounter any bug or unusual behaviour, thanks in advance!</strong></p>
-<h1 id="-important-notice-">⚠️Important Notice⚠️</h1>
-<h3 id="you-will-need-to-set-all-the-settings-again-as-i-added-company-name-to-the-assembly-">You will need to set all the settings again as i added company name to the assembly!</h3>
+<h1>⚠️Important Notice⚠️</h1>
+<h3>You will need to set all the settings again as i added company name to the assembly!</h3>
+
 </article>
-    </main>
+
+<article>
+    <h3>Version 1.1.2 changelog</h3>
+<ol>
+<li>Changed how bomb notifications work in telegram (#16 )</li>
+</ol>
+<ul>
+<li>Telegram bot shows only when bomb is planted without the timer</li>
+</ul>
+<h2>What's Changed</h2>
+<ul>
+<li>VirusTotal detection fixes + new class for api keys by @MurkyYT in <a href="https://github.com/MurkyYT/CSAuto/pull/12">https://github.com/MurkyYT/CSAuto/pull/12</a></li>
+<li>Fix telegram notifications + compilation fix by @MurkyYT in <a href="https://github.com/MurkyYT/CSAuto/pull/13">https://github.com/MurkyYT/CSAuto/pull/13</a></li>
+</ul>
+
+</article>
+
+<article>
+    <h3>Version 1.1.1 changelog</h3>
+<ol>
+<li>Languages now work differently in app</li>
+<li>Checking if really accepted match</li>
+<li>Added Telegram notifications!</li>
+<li>Fixed bomb notifications</li>
+</ol>
+
+</article>
+
+<article>
+    <h3>Version 1.1.0 changelog</h3>
+<ol>
+<li>Added mobile notification menu where you can disable different notifications</li>
+<li>Changed from searching everytime for csgo process to finding it once</li>
+<li>Added a new notification to mobile, bomb status, you can see time left till explosion, bomb has been defused, or the bomb exploded</li>
+<li>Added translations to notifications</li>
+<li>Added translations to exceptions</li>
+<li>There should be no more ui stopping functions</li>
+<li>When the language isnt found, try to switch to english, if english isnt found stay with the category</li>
+<li>Added steamworks api to get amount of players in csgo lobby (you have to turn it on manually, could be bannable, enable at your own risk!)</li>
+</ol>
+<h2>What's Changed</h2>
+<ul>
+<li>Moved all csauto project to a folder by @MurkyYT in <a href="https://github.com/MurkyYT/CSAuto/pull/9">https://github.com/MurkyYT/CSAuto/pull/9</a></li>
+<li>Improvments of application by @MurkyYT in <a href="https://github.com/MurkyYT/CSAuto/pull/10">https://github.com/MurkyYT/CSAuto/pull/10</a></li>
+</ul>
+
+</article>
+
+<article>
+    <h3>Version 1.0.9 changelog</h3>
+<ol>
+<li>Added languages to the application, available languages right now are: English and Russian.</li>
+<li>Added icon to the installer (thanks @NoPlagiarism)</li>
+<li>There are now <a href="https://github.com/MurkyYT/CSAuto/#contributors">contributors</a> in the README</li>
+<li>Added <a href="https://github.com/MurkyYT/CSAuto/#building-the-app">building instruction</a> to the README</li>
+<li>Added <a href="https://github.com/MurkyYT/CSAuto/blob/master/README_ru.md">russian translation</a> to the README</li>
+<li>Added <a href="https://github.com/MurkyYT/CSAuto/#faq">FAQ</a> to the README</li>
+</ol>
+<h2>What's Changed</h2>
+<ul>
+<li>Some ru&amp;en lang fix + &quot;restartneeded&quot; by @NoPlagiarism in <a href="https://github.com/MurkyYT/CSAuto/pull/8">https://github.com/MurkyYT/CSAuto/pull/8</a></li>
+</ul>
+<h2>New Contributors</h2>
+<ul>
+<li>@NoPlagiarism made their first contribution in <a href="https://github.com/MurkyYT/CSAuto/pull/8">https://github.com/MurkyYT/CSAuto/pull/8</a></li>
+</ul>
+
+</article>
+
+<article>
+    <h3>Version 1.0.8 changelog</h3>
+<ol>
+<li>Discord RPC and GameState Server are now started when cs is started and disabled when cs is closed</li>
+<li>Discord RPC shows icon now for only supported maps</li>
+<li>Added function caller to log</li>
+<li>Added spectating/watching gotv to discord rpc</li>
+<li>Optimized discord rpc update</li>
+<li>Discord rpc shows score by first showing the score of your team</li>
+<li>Created a mobile app on android which sends you a notification when CSAuto on desktop</li>
+</ol>
+<ul>
+<li>Accepted a match</li>
+<li>Found out that u are in lobby</li>
+<li>Found out you loaded on to a map</li>
+</ul>
+<ol start="8">
+<li>To connect to the mobile app you have to download the app, install it, then start the server and allow the app to ignore battery optimization.
+After you have done that you will see a notification with your ip address, in the desktop app go to &quot;Mobile App&quot;, enable it, and then select &quot;Enter Ip Address&quot;, you should see an input box, in the input box enter the ip address you see in the notification.
+After that you should be good to go.</li>
+</ol>
+
+</article>
+
+<article>
+    <h3>Version 1.0.7 changelog</h3>
+<ol>
+<li>Made button search on all screen height and not half of it</li>
+<li>After pressing the accept button the app now waits 20 seconds before starting to search again</li>
+<li>Added discord rpc logging</li>
+<li>Various bug fixes and quality of life improvements</li>
+</ol>
+
+</article>
+
+<article>
+    <h3>Version 1.0.6 changelog</h3>
+<ol>
+<li>When auto buying stuff chat and console are closed</li>
+<li>Discord rpc now shows csgo friendcode and not steamid</li>
+<li>Unfortunately the app is now more then just an executable</li>
+<li>Various bug fixes</li>
+</ol>
+
+</article>
+
+<article>
+    <h3>Version 1.0.5a changes</h3>
+<ol>
+<li>Discord rpc now shows time elapsed from match start/time in lobby</li>
+<li>Discord rpc shows round state in the place where time elapsed was before, if in warmup it shows 'Warmup'</li>
+</ol>
+
+</article>
+
+<article>
+    <h3>Version 1.0.5 fixes</h3>
+<ol>
+<li>Using latest release github api to find the latest tag</li>
+</ol>
+
+</article>
+
+<article>
+    <h3>Version 1.0.4 updates</h3>
+<ol>
+<li>Discord RPC now shows time elapsed from match started</li>
+</ol>
+<h3>Version 1.0.4 fixes</h3>
+<ol>
+<li>Fixed how the app is checking if the player is in game by checking if the map is found</li>
+<li>Fixed Discord RPC flickering and not showing correctly</li>
+<li>Fixed Discord RPC timestamp for time elapsed</li>
+<li>Fixed checking for updates by using github's api</li>
+</ol>
+
+</article>
+
+<article>
+    <h3>Version 1.0.3 updates</h3>
+<ol>
+<li>Added DiscordRPC implementation</li>
+<li>You can now open gsi output text to parse it</li>
+<li>You can save gsi output</li>
+</ol>
+
+</article>
+
+<article>
+    <h3>Version 1.0.2a updates</h3>
+<ol>
+<li>You have an option to enable checking for updates on startup</li>
+<li>All the automation menu items are now in its own category</li>
+<li>All settings are now in its own category</li>
+<li>Added open debug window option to the debug category</li>
+</ol>
+<h3>Version 1.0.2a fixes</h3>
+<ol>
+<li>Fixed the title in the Debug window from &quot;CSAUto&quot; to &quot;CSAuto&quot;</li>
+<li>Fixed the log time format</li>
+</ol>
+
+</article>
+
+<article>
+    <h3>Version 1.0.2 updates</h3>
+<ol>
+<li>Added automatic resuming or pausing of spotify song (when you are alive the song is paused)</li>
+</ol>
+
+</article>
+
+<article>
+    <h3>Version 1.0.1 fixes</h3>
+<ol>
+<li>Fixed a bug when logging wont turn on with app on windows startup</li>
+<li>App now shows a correct error message when CS:GO or Steam path isn't found</li>
+<li>If CS:GO or Steam path isn't found disable Auto Buy and Auto Reload options as it is dependant on <a href="https://developer.valvesoftware.com/wiki/Counter-Strike:_Global_Offensive_Game_State_Integration">CS:GO GSI</a></li>
+</ol>
+
+</article>
+
+</main>
+
 </body>
 </html>

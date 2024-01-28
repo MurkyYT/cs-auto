@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSAuto</title>
+    <!--Enable only on deploy!-->
+    <!--<meta name="keywords" content="CS, CS2, cs, cs2, automation, gsi, csgsi, Counter-Strike, Counter-Strike 2, CS2, counter strike, software, application, app">
+    <meta name="description" content="CSAuto is software to automate usual CS2 in game tasks, such as accepting match, buying items and much more!">
+    <meta name="author" content="Murky">-->
+    <link rel="icon" type="image/x-icon" href="public/favicon.ico">
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+
+    <!--Insert Vercel tracker-->
+
+    <!--Insert here JSON-LD (https://schema.org/SoftwareApplication || https://developers.google.com/search/docs/appearance/structured-data/software-app || https://yandex.ru/support/webmaster/supported-schemas/software.html)-->
+    {% endblock %}
+</head>
+<body>
+    {% block body %}
+    <input type="checkbox" id="about-modal-open">
+    <dialog id="modal-about">
+        <article>
+            <header>
+                <label role="link" for="about-modal-open" aria-label="Close" class="close"></label>
+                About
+            </header>
+            <p>
+                CSAuto is software to automate usual CS2 in some game tasks, such as accepting match, buying items and much more!
+                <br><br>
+                CSAuto created and actively maintained by <a aria-label="CSAuto repository on GitHub" href="https://github.com/MurkyYT">Murky</a> with <a aria-label="GitHub developer profile" href="https://github.com/MurkyYT">Source available on GitHub.</a>
+                <br><br>
+                <a aria-label="Website source code on GitHub" href="https://github.com/MurkyYT/cs-auto">Source code</a> of this website also available on GitHub.
+            </p>
+            <footer>
+                <p>Website made with 💜 by <a href="https://github.com/NoPlagiarism">NoPlagiarism</a></p>
+            </footer>
+        </article>
+    </dialog>
+    <nav class="container-fluid">
+        <ul><a href="https://github.com/MurkyYT/CSAuto"><li><img alt="CSAuto" src="public\logo.svg" width="64"></li><li><h4 style="margin: 0;">CSAuto</h4></li><a></ul>
+        <ul>
+            <li><a href="/index.html"{% if active_nav=="home" %} role="button"{% endif %}>Home</a></li>
+            <li><a href="/changelog.html"{% if active_nav=="changelog" %} role="button"{% endif %}>Changelog</a></li>
+            <li><label role="link" for="about-modal-open">About</label></li>
+        </ul>
+    </nav>
+    {% endblock %}
+    {% block main required %}
+    {% endblock %}
+</body>
+</html>
