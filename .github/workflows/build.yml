@@ -10,7 +10,7 @@ env:
     POETRY_VER: "1.7.1"
 
 jobs:
-    use_cache:
+    build:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout
@@ -22,8 +22,7 @@ jobs:
                 poetry-version: ${{ env.POETRY_VER }}
             - name: Build
               run: |
-                chmod 777 scripts/bundle.py 
-                poetry run scripts/bundle.py
+                poetry run python scripts/bundle.py
             - name: "Commit & Push"
               uses: EndBug/add-and-commit@v9
               with:
