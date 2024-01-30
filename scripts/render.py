@@ -39,6 +39,7 @@ class Render:
         self.provider: BaseDataProvider = provider_class()
         self.markdown = MarkdownIt()
         self.gh_ref = GHReferenceRenderer()
+        self.gh_ref.cache_all()
         self.markdown.use(self.gh_ref)
         self.markdown.configure(gfm_like_custom.make())
     
