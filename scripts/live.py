@@ -3,6 +3,7 @@ import os
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse, PlainTextResponse
 from fastapi.staticfiles import StaticFiles
+from loguru import logger
 import uvicorn
 
 from render import Render
