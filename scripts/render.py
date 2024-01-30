@@ -38,7 +38,8 @@ class Render:
         self.engine = Environment(loader=FileSystemLoader(Paths.TEMPLATES_DIR))
         self.provider: BaseDataProvider = provider_class()
         self.markdown = MarkdownIt()
-        GHReferenceRenderer().install(self.markdown)
+        self.gh_ref = GHReferenceRenderer()
+        self.markdown.use(self.gh_ref)
         self.markdown.configure(gfm_like_custom.make())
     
     def get_filename(self, name: str):

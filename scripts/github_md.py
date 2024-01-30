@@ -20,6 +20,9 @@ class GHReferenceRenderer(GHClient):
     def install(self, md: MarkdownIt):
         md.core.ruler.push("GHRefLink_core", self.ref_link_core)
 
+    def __call__(self, *args, **kwargs):
+        return self.install(*args, **kwargs)
+
     def get_data_from_reference(self, ref_match: str | re.Match):
         if isinstance(ref_match, str):
             ref_match = REF_REGEX.match(ref_match)
