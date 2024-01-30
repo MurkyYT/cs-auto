@@ -40,8 +40,8 @@ class GHReferenceRenderer(GHClient):
             while i >= 1:
                 i -= 1
                 current_token = tokens[i]
-                # Skip markdown links
-                if current_token.type == "link_close" and current_token.info != "auto" and "github.com" in current_token.attrs.get("href", "None"):
+                # Skip markdown and automatically created links
+                if current_token.type == "link_close" and current_token.info != "auto":
                     i -= 1
                     while tokens[i].level != current_token.level and tokens[i].type != "link_open":
                         i -= 1
