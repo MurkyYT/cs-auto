@@ -11,5 +11,5 @@ Source code of [CSAuto website](https://csauto.vercel.app). ( [CSAuto repo](http
 
 ## TO-DO
 
-- [ ] Parse GitHub references in Changelog
+- [x] Parse GitHub references in Changelog
 - [ ] Use live.py and serverless functions from Vercel
