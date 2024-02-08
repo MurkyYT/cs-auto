@@ -10,7 +10,7 @@ except ImportError:
 
 
 def _log_value_decor(func):
-    def decor(*args, log_value: bool, **kwargs):
+    def decor(*args, log_value: bool = True, **kwargs):
         name = kwargs.get("name") or args[0]
         val = func(*args, **kwargs)
         if log_value:
@@ -48,3 +48,4 @@ LOG_ENV_VALUES = Env.bool("LOG_ENV_VALUES", True, log_value=True)
 
 CSAUTO_LIVE_PROVIDER = Env.str("CSAUTO_LIVE_PROVIDER", default="github", log_value=LOG_ENV_VALUES)
 CSAUTO_LOAD_GH_CACHE = Env.bool("CSAUTO_LOAD_GH_CACHE", False, log_value=LOG_ENV_VALUES)
+CSAUTO_BASE_URL = Env.str("CSAUTO_BASE_URL", "https://csauto.vercel.app/")  # Used for canonical urls

@@ -12,6 +12,9 @@
     <meta name="og:type" content="website">
     <meta name="author" content="Murky">
     <link rel="icon" type="image/x-icon" href="public/favicon.ico">
+    {% if canon_link %}
+    <link rel="canonical" href="{{ canon_link }}">
+    {% endif %}
 
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
