@@ -6,6 +6,7 @@ from fastapi.staticfiles import StaticFiles
 from loguru import logger
 import uvicorn
 
+from env import CSAUTO_LIVE_PROVIDER
 from render import Render
 from get_data import LocalFileProvider, RawGithubProvider
 from shared import Paths
@@ -20,7 +21,7 @@ app = FastAPI()
 app.mount("/css", StaticFiles(directory=os.path.join(Paths.WEB_ROOT_DIR, "css")), name="css")
 app.mount("/public", StaticFiles(directory=os.path.join(Paths.WEB_ROOT_DIR, "public")), name="public")
 
-rend = Render(provider_class={"local": LocalFileProvider, "github": RawGithubProvider}[os.environ.get("CSAUTO_LIVE_PROVIDER", "github")])
+rend = Render(provider_class={"local": LocalFileProvider, "github": RawGithubProvider}[CSAUTO_LIVE_PROVIDER])
 
 @app.get("/")
 async def root():
