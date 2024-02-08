@@ -51,3 +51,4 @@ CSAUTO_LOAD_GH_CACHE = Env.bool("CSAUTO_LOAD_GH_CACHE", False, log_value=LOG_ENV
 CSAUTO_BASE_URL = Env.str("CSAUTO_BASE_URL", "https://csauto.vercel.app/", log_value=True)  # Used for canonical urls
 CSAUTO_GH_REPO = Env.str("CSAUTO_GH_REPO", default="MurkyYT/CSAuto", log_value=True)
 CSAUTO_DEFAULT_BRANCH = Env.str("CSAUTO_DEFAULT_BRANCH", default="master", log_value=True)
+CSAUTO_DISABLE_META = Env.bool("CSAUTO_DISABLE_META", default=False, log_value=LOG_ENV_VALUES)

@@ -5,7 +5,7 @@ from markdown_it.utils import PresetType
 from loguru import logger
 from jinja2 import Environment, FileSystemLoader
 
-from env import CSAUTO_BASE_URL
+from env import CSAUTO_BASE_URL, CSAUTO_DISABLE_META
 from shared import LANGUAGES, DEFAULT_LANGUAGE, Paths
 from github_md import GHReferenceRenderer
 from get_data import BaseDataProvider, RawGithubProvider
@@ -43,6 +43,7 @@ class Render:
         self.base_url = URL(CSAUTO_BASE_URL)
         self.lang = lang
         self.engine = Environment(loader=FileSystemLoader(Paths.TEMPLATES_DIR))
+        self.engine.globals["meta_disabled"] = CSAUTO_DISABLE_META
         self.provider: BaseDataProvider = provider_class()
         self.markdown = MarkdownIt()
         self.gh_ref = GHReferenceRenderer()
