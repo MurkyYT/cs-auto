@@ -3,14 +3,13 @@ import os
 
 from httpx import URL
 
+from env import CSAUTO_GH_REPO, CSAUTO_DEFAULT_BRANCH as DEFAULT_BRANCH
+
 class Paths:
     SCRIPTS_DIR = os.path.dirname(__file__)
     ROOT_DIR = os.path.dirname(SCRIPTS_DIR)
     TEMPLATES_DIR = os.path.join(ROOT_DIR, "templates")
     WEB_ROOT_DIR = os.path.join(ROOT_DIR, "www")
-
-CSAUTO_GH_REPO = "MurkyYT/CSAuto"
-DEFAULT_BRANCH = "master"
 
 class LANGUAGES(StrEnum):
     EN = "en"

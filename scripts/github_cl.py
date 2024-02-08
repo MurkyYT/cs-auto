@@ -4,8 +4,8 @@ import json
 from httpx import Client
 from loguru import logger
 
-from shared import CSAUTO_GH_REPO, Paths
-from env import CSAUTO_LOAD_GH_CACHE
+from shared import Paths
+from env import CSAUTO_LOAD_GH_CACHE, CSAUTO_GH_REPO
 
 import typing as t
 

@@ -16,7 +16,7 @@ import typing as t
 class gfm_like_custom:  # noqa: N801
     """GitHub Flavoured Markdown (GFM) like.
 
-    This adds the linkify, table and strikethrough components to CommmonMark.
+    This adds the linkify, table and strikethrough components to CommmonMark (plus GHRefLink).
 
     Note, it lacks task-list items and raw HTML filtering,
     to meet the the full GFM specification

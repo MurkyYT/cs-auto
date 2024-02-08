@@ -7,7 +7,7 @@ from markdown_it.common.utils import arrayReplaceAt, isLinkClose, isLinkOpen
 from loguru import logger
 
 from github_cl import GHClient
-from shared import CSAUTO_GH_REPO
+from env import CSAUTO_GH_REPO
 
 import typing as t
 
@@ -43,7 +43,7 @@ class GHReferenceRenderer(GHClient):
             while i >= 1:
                 i -= 1
                 current_token = tokens[i]
-                # Skip markdown and automatically created links
+                # Skip markdown link, but not automatically created
                 if current_token.type == "link_close" and current_token.info != "auto":
                     i -= 1
                     while tokens[i].level != current_token.level and tokens[i].type != "link_open":
