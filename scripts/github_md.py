@@ -12,7 +12,7 @@ from shared import CSAUTO_GH_REPO
 import typing as t
 
 
-REF_REGEX = re.compile(r"(?:(?:https://)?github\.com\/)?(?:(?P<owner>(?:[A-Za-z]|\d|-)+)/)?(?P<repo>(?:[A-Za-z]|\d|-)+)?(?:#|\/(?P<ref_type>issues|pull)\/)(?P<index>\d+)")
+REF_REGEX = re.compile(r"(?:(?:https://)?github\.com\/)?(?:(?P<owner>(?:[A-Za-z]|\d|-)+)/)?(?P<repo>(?:[A-Za-z]|\d|-)+)?(?:GH-|#|\/(?P<ref_type>issues|pull)\/)(?P<index>\d+)")
 USER_REGEX = re.compile(r"@([a-z0-9](?:-(?=[a-z0-9])|[a-z0-9]){0,38}(?<=[a-z0-9]))", re.IGNORECASE)  # https://stackoverflow.com/a/30281147/20533050
 
 
