@@ -8,6 +8,25 @@ Source code of [CSAuto website](https://csauto.vercel.app). ( [CSAuto repo](http
 - [markdown-it-py](https://github.com/executablebooks/markdown-it-py) for rendering FAQ and Changelog from main repo
 - [picocss](https://picocss.com) css framework
 - [Vercel](https://vercel.com) for deploy
+- [httpx](https://www.python-httpx.org) as main HTTP client (mainly for GitHub)
+- [loguru](https://github.com/Delgan/loguru) to log
+- Also, [FastAPI](https://fastapi.tiangolo.com) and [Uvicorn](https://www.uvicorn.org) for live debugging
+
+## Development
+
+### Setting up environment
+
+Requirements:
+
+- Python 3.12
+- [Poetry](https://python-poetry.org)
+
+Firstly, you need to install dependencies (ofc, after cloning and going to dir) and activate shell
+
+```bash
+poetry install --no-root
+poetry shell
+```
 
 ## TO-DO
 
