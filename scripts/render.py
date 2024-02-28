@@ -44,6 +44,7 @@ class Render:
         self.lang = lang
         self.engine = Environment(loader=FileSystemLoader(Paths.TEMPLATES_DIR))
         self.engine.globals["meta_disabled"] = CSAUTO_DISABLE_META
+        self.engine.globals["base_url"] = str(base_url)
         self.provider: BaseDataProvider = provider_class()
         self.markdown = MarkdownIt()
         self.gh_ref = GHReferenceRenderer()

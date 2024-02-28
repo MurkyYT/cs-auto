@@ -36,7 +36,7 @@ poetry shell
   - Default: `DEBUG`
   - Value: `TRACE`, `DEBUG`, `INFO`
 - `CSAUTO_BASE_URL`
-  - Needed for canonical urls.
+  - Needed for canonical urls, Open Graph and etc.
   - Default: `https://csauto.vercel.app/`
   - Value: https url to website. If web does not have simple domain (`example.github.io/cs-auto`), you must put trailing slash to the end of it (like `https://example.github.io/cs-auto/`)
 - `CSAUTO_GH_REPO`
