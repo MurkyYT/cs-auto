@@ -8,6 +8,58 @@ Source code of [CSAuto website](https://csauto.vercel.app). ( [CSAuto repo](http
 - [markdown-it-py](https://github.com/executablebooks/markdown-it-py) for rendering FAQ and Changelog from main repo
 - [picocss](https://picocss.com) css framework
 - [Vercel](https://vercel.com) for deploy
+- [httpx](https://www.python-httpx.org) as main HTTP client (mainly for GitHub)
+- [loguru](https://github.com/Delgan/loguru) to log
+- Also, [FastAPI](https://fastapi.tiangolo.com) and [Uvicorn](https://www.uvicorn.org) for live debugging
+- [python-dotenv](https://github.com/theskumar/python-dotenv) for reading .env files
+
+## Development
+
+### Setting up environment
+
+Requirements:
+
+- Python 3.12
+- [Poetry](https://python-poetry.org)
+
+Firstly, you need to install dependencies (ofc, after cloning and going to dir) and activate shell
+
+```bash
+poetry install --with dev --no-root
+poetry shell
+```
+
+### Environment variables
+
+- `LOGURU_LEVEL`
+  - Used by loguru. For more loguru envvars see [this](https://github.com/Delgan/loguru/blob/master/loguru/_defaults.py)
+  - Default: `DEBUG`
+  - Value: `TRACE`, `DEBUG`, `INFO`
+- `CSAUTO_BASE_URL`
+  - Needed for canonical urls, Open Graph and etc.
+  - Default: `https://csauto.vercel.app/`
+  - Value: https url to website. If web does not have simple domain (`example.github.io/cs-auto`), you must put trailing slash to the end of it (like `https://example.github.io/cs-auto/`)
+- `CSAUTO_GH_REPO`
+  - Used by GH reference parser
+  - Default: `MurkyYT/CSAuto`
+- `CSAUTO_DEFAULT_BRANCH`
+  - Used for accessing files on main repo like `FullChangelog.MD` or `README.md`
+  - Default: `master`
+
+#### Variables below are used for debugging purpose
+
+- `CSAUTO_DISABLE_META`
+  - Disables all meta tags to escape any misunderstandings with search indexers
+  - Default: *False*
+  - Value: Boolean (`True`/`False` or `1`/`0`)
+- `CSAUTO_LIVE_PROVIDER`
+  - `README.md` and `FullChangelog.md` provider. If you decide to switch this to `local`, you must specify where they are through `CSAUTO_CHANGELOG`, `CSAUTO_README_EN` and `CSAUTO_README_RU`
+  - Default: `github`
+  - Value: `github` or `local`
+- `CSAUTO_LOAD_GH_CACHE`
+  - Toggles GitHub data cache saving into `gh_cache.json`
+  - Default: *False*
+  - Value: Boolean (`True`/`False` or `1`/`0`)
 
 ## TO-DO
 

@@ -7,12 +7,12 @@ from markdown_it.common.utils import arrayReplaceAt, isLinkClose, isLinkOpen
 from loguru import logger
 
 from github_cl import GHClient
-from shared import CSAUTO_GH_REPO
+from env import CSAUTO_GH_REPO
 
 import typing as t
 
 
-REF_REGEX = re.compile(r"(?:(?:https://)?github\.com\/)?(?:(?P<owner>(?:[A-Za-z]|\d|-)+)/)?(?P<repo>(?:[A-Za-z]|\d|-)+)?(?:#|\/(?P<ref_type>issues|pull)\/)(?P<index>\d+)")
+REF_REGEX = re.compile(r"(?:(?:https://)?github\.com\/)?(?:(?P<owner>(?:[A-Za-z]|\d|-)+)/)?(?P<repo>(?:[A-Za-z]|\d|-)+)?(?:GH-|#|\/(?P<ref_type>issues|pull)\/)(?P<index>\d+)")
 USER_REGEX = re.compile(r"@([a-z0-9](?:-(?=[a-z0-9])|[a-z0-9]){0,38}(?<=[a-z0-9]))", re.IGNORECASE)  # https://stackoverflow.com/a/30281147/20533050
 
 
@@ -43,7 +43,7 @@ class GHReferenceRenderer(GHClient):
             while i >= 1:
                 i -= 1
                 current_token = tokens[i]
-                # Skip markdown and automatically created links
+                # Skip markdown link, but not automatically created
                 if current_token.type == "link_close" and current_token.info != "auto":
                     i -= 1
                     while tokens[i].level != current_token.level and tokens[i].type != "link_open":

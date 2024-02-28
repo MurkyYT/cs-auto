@@ -4,7 +4,8 @@ import json
 from httpx import Client
 from loguru import logger
 
-from shared import CSAUTO_GH_REPO, Paths
+from shared import Paths
+from env import CSAUTO_LOAD_GH_CACHE, CSAUTO_GH_REPO
 
 import typing as t
 
@@ -23,7 +24,7 @@ class GHClient:
             headers["Authorization"] = "Bearer " + token
         self.client = Client(headers=headers, follow_redirects=True)
         self.cache = list()
-        if os.environ.get("CSAUTO_LOAD_GH_CACHE", 0) in ("1", 1):
+        if CSAUTO_LOAD_GH_CACHE:
             with open(os.path.join(Paths.ROOT_DIR, "gh_cache.json"), mode="r", encoding="utf-8") as f:
                 self.cache.extend(json.load(f))
         
