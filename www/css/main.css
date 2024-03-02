@@ -1,15 +1,15 @@
 [data-theme=light], :root:not([data-theme=dark]) {
-    --bg-secondary: #C5EEDA;
+    --bg-secondary: #CBFCE1;
 }
 
 @media only screen and (prefers-color-scheme: dark) {
     :root:not([data-theme]) {
-        --bg-secondary: #20282D;
+        --bg-secondary: #202838;
     }
 }
 
 [data-theme=dark] {
-    --bg-secondary: #20282D;
+    --bg-secondary: #202838;
 }
 
 nav {
@@ -32,7 +32,7 @@ html {
 }
 
 main {
-    margin-top: 75px;
+    margin-top: 90px;
 }
 
 /* index.html */
@@ -88,7 +88,6 @@ section.FeaturesSection {
 }
 
 .col-1 video, .col-1 img {
-    padding-right: 3px;
     @media screen and (min-width: 800px) {
         padding: 0px;
     }
