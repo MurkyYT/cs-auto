@@ -63,5 +63,4 @@ poetry shell
 
 ## TO-DO
 
-- [x] Parse GitHub references in Changelog
-- [ ] Use live.py and serverless functions from Vercel
+- [ ] Add support for translations
