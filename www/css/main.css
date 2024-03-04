@@ -23,6 +23,11 @@ nav {
     z-index: 2;
 }
 
+footer {
+    background-color: var(--bg-secondary);
+    text-align: center;
+}
+
 nav h4 {
     /*lil crutch*/
     @media screen and (max-width: 400px) {
