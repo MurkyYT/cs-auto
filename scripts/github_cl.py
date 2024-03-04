@@ -25,8 +25,11 @@ class GHClient:
         self.client = Client(headers=headers, follow_redirects=True)
         self.cache = list()
         if CSAUTO_LOAD_GH_CACHE:
-            with open(os.path.join(Paths.ROOT_DIR, "gh_cache.json"), mode="r", encoding="utf-8") as f:
-                self.cache.extend(json.load(f))
+            try:
+                with open(os.path.join(Paths.ROOT_DIR, "gh_cache.json"), mode="r", encoding="utf-8") as f:
+                    self.cache.extend(json.load(f))
+            except FileNotFoundError:
+                logger.warning("gh_cache.json not found")
         
     @staticmethod
     def is_this_default_repo(repo_owner: str, repo: str):
