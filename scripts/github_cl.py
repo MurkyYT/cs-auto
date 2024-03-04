@@ -108,6 +108,13 @@ class GHClient:
         res.extend(resp.json())
         return res
     
+    def get_latest_release(self, repo: t.Optional[str] = None):
+        if repo is None:
+            repo = CSAUTO_GH_REPO
+        logger.trace(f"Get latest release from {repo}")
+        resp = self.client.get(f"https://api.github.com/repos/{repo}/releases/latest")
+        return resp.json()
+    
     def get_user(self, user: str, cached=True):
         if cached:
             if res := tuple(filter(lambda x: x["_type"] == "user" and x.get("login") == user, self.cache)):

@@ -1,15 +1,18 @@
 [data-theme=light], :root:not([data-theme=dark]) {
-    --bg-secondary: #CBFCE1;
+    --bg-secondary: #CBFCE1;  /* pico-jade-50 */
+    --downloads-column-bg: #70FCBA; /* pico-jade-100 */
 }
 
 @media only screen and (prefers-color-scheme: dark) {
     :root:not([data-theme]) {
-        --bg-secondary: #202838;
+        --bg-secondary: #202838;  /* pico-background-color */
+        --downloads-column-bg: #00452B;  /* pico-jade-750 */
     }
 }
 
 [data-theme=dark] {
-    --bg-secondary: #202838;
+    --bg-secondary: #202838;  /* pico-background-color */
+    --downloads-column-bg: #00452B;  /* pico-jade-750 */
 }
 
 nav {
@@ -150,4 +153,43 @@ dialog footer {
 
 dialog footer p {
     font-size: small;
+}
+
+/* Downloads section */
+
+.downloads {
+    width: 100%;
+    background-color: var(--bg-secondary);
+}
+
+.DownloadColumn {
+    background-color: var(--downloads-column-bg);
+    margin: 5px;
+    padding: 3px;
+    display: grid;
+    align-content: start;
+    gap: 10px;
+}
+
+.DownloadColumn svg {
+    width: 32px;
+    color: #9BCCFD;  /* pico-color-azure-200 */
+}
+
+.DownloadColumn code {
+    width: fit-content;
+}
+
+.downloads div {
+    border-radius: 0.25em;
+}
+
+.DownloadColumn a {
+    width: fit-content;
+    height: fit-content;
+    padding: 10px;
+}
+
+.DownloadColumn hr {
+    margin: 0px;
 }

@@ -58,13 +58,17 @@ class Render:
     
     def render_index(self):
         faq_html = self.markdown.render(self.provider.get_faq(self.lang))
-        return self.engine.get_template(self.get_filename("index")).render(active_nav="home", faq=faq_html, canon_link=self.base_url)
+        latest_version = self.provider.get_version()
+        return self.engine.get_template(self.get_filename("index")).render(active_nav="home", faq=faq_html, canon_link=self.base_url, latest_version=latest_version)
     
     def render_changelog(self):
         changelog_md = self.provider.get_changelog()
         logger.debug(f"Got {len(changelog_md)} changelogs")
         changelog_html = list(map(self.markdown.render, changelog_md))
         return self.engine.get_template(self.get_filename("changelog")).render(active_nav="changelog", changelogs=changelog_html, canon_link=self.base_url.join("/changelog"))
+    
+    def just_render(self, name: str, path: str):
+        return self.engine.get_template(self.get_filename(name)).render(active_nav=name, canon_link=self.base_url.join(path))
 
 
 if __name__ == '__main__':
