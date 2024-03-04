@@ -6,12 +6,17 @@ Source code of [CSAuto website](https://csauto.vercel.app). ( [CSAuto repo](http
 
 - [jinja](https://jinja.palletsprojects.com) templates
 - [markdown-it-py](https://github.com/executablebooks/markdown-it-py) for rendering FAQ and Changelog from main repo
-- [picocss](https://picocss.com) css framework
+- [picocss](https://picocss.com) as css framework
 - [Vercel](https://vercel.com) for deploy
 - [httpx](https://www.python-httpx.org) as main HTTP client (mainly for GitHub)
 - [loguru](https://github.com/Delgan/loguru) to log
 - Also, [FastAPI](https://fastapi.tiangolo.com) and [Uvicorn](https://www.uvicorn.org) for live debugging
 - [python-dotenv](https://github.com/theskumar/python-dotenv) for reading .env files
+
+### Deserves mention
+
+- [Font Awesome](https://fontawesome.com/) svg icons
+- [Scoop svg logo](https://github.com/ScoopInstaller/Scoop/discussions/5516) by @xmha97
 
 ## Development
 
@@ -63,5 +68,4 @@ poetry shell
 
 ## TO-DO
 
-- [x] Parse GitHub references in Changelog
-- [ ] Use live.py and serverless functions from Vercel
+- [ ] Add support for translations
