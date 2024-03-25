@@ -12,7 +12,7 @@ Source code of [CSAuto website](https://csauto.vercel.app). ( [CSAuto repo](http
 - [loguru](https://github.com/Delgan/loguru) to log
 - Also, [FastAPI](https://fastapi.tiangolo.com) and [Uvicorn](https://www.uvicorn.org) for live debugging
 - [python-dotenv](https://github.com/theskumar/python-dotenv) for reading .env files
-- [Babel] for help with localizing
+- [Babel](https://babel.pocoo.org) for help with localizing
 
 ### Deserves mention
 
