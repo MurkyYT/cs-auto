@@ -1,9 +1,11 @@
 from datetime import datetime
+from functools import cache
 import os
+
 import httpx
 from loguru import logger
 
-from shared import DEFAULT_LANGUAGE, LANGUAGES, URLS
+from shared import URLS, LANGUAGES_IDS_STR_LITERAL, DEFAULT_LANGUAGE_ID
 
 import typing as t
 
@@ -14,10 +16,10 @@ except ImportError:
     pass
 
 class BaseDataProvider:
-    def get_readme(self, lang: LANGUAGES = DEFAULT_LANGUAGE) -> str:
+    def get_readme(self, lang: LANGUAGES_IDS_STR_LITERAL = DEFAULT_LANGUAGE_ID) -> str:
         raise NotImplementedError
     
-    def get_faq(self, lang: LANGUAGES = DEFAULT_LANGUAGE) -> str:
+    def get_faq(self, lang: LANGUAGES_IDS_STR_LITERAL = DEFAULT_LANGUAGE_ID) -> str:
         FAQ_BEGIN_STRING = "## FAQ"
         FAQ_END_STRING = "\n## "
         
@@ -44,10 +46,12 @@ class BaseDataProvider:
 
 
 class RawGithubProvider(BaseDataProvider):
-    def get_readme(self, lang: LANGUAGES = DEFAULT_LANGUAGE) -> str:
+    @cache
+    def get_readme(self, lang: LANGUAGES_IDS_STR_LITERAL = DEFAULT_LANGUAGE_ID) -> str:
         resp = httpx.get(url=URLS.RAW_README[lang])
         return resp.text
     
+    @cache
     def get_changelog_md(self) -> str:
         resp = httpx.get(url=URLS.RAW_CHANGELOG)
         return resp.text
@@ -56,10 +60,12 @@ class RawGithubProvider(BaseDataProvider):
         changelog_md = self.get_changelog_md()
         return list(changelog_md.split("<!--Version split-->"))
     
+    @cache
     def get_colors(self) -> str:
         resp = httpx.get(url=URLS.RAW_COLORS)
         return resp.text
     
+    @cache
     def get_version(self) -> str:
         raw_resp = httpx.get(URLS.RELEASES_API, headers={"X-GitHub-Api-Version": "2022-11-28"})
         logger.debug(f"Releases response: {raw_resp.status_code}")
@@ -68,7 +74,7 @@ class RawGithubProvider(BaseDataProvider):
 
 
 class LocalFileProvider(RawGithubProvider):
-    def get_readme(self, lang: LANGUAGES = DEFAULT_LANGUAGE) -> str:
+    def get_readme(self, lang: LANGUAGES_IDS_STR_LITERAL = DEFAULT_LANGUAGE_ID) -> str:
         with open(os.environ[f"CSAUTO_README_{lang.value.upper()}"], mode="r", encoding="utf-8") as f:
             return f.read()
     

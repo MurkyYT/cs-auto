@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html
 <html lang="en">
 <head>
     
@@ -15,7 +15,7 @@
     <meta name="og:type" content="website">
     <meta name="og:title" content="CSAuto">
     <meta name="og:description" content="Counter-Strike 2 companion that automates in-game tasks, such as accepting match, buying items and more">
-    <meta name="og:image" content="https://csauto.vercel.app/public/images/opengraph.jpg">
+    <meta name="og:image" content="https://csauto.vercel.app/public/images/opengraph.jpg">  
     <!--TWITTER-->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="CSAuto">
@@ -33,9 +33,12 @@
             "alternateName": "MurkyYT",
             "url": "https://github.com/MurkyYT"
         },
+        "availableLanguage": [
+            [{"@type": "Language", "name": "English"}, {"@type": "Language", "name": "Russian"}]
+        ]
         "applicationCategory": "Game",
         "applicationSubCategory": "Tools",
-        "keywords": "CS, CS2, cs, cs2, automation, gsi, csgsi, Counter-Strike, Counter-Strike 2, CS2, counter strike, software, application, app, CS2 auto accept,  cs auto accept, auto accept",
+        "keywords": "CS, CS2, cs, cs2, automation, gsi, csgsi, Counter-Strike, Counter-Strike 2, CS2, counter strike, software, application, app, cs auto accept, auto accept, CS2 auto accept",
         "description": "Counter-Strike 2 companion that automates in-game tasks, such as accepting match, buying items and more",
         "operatingSystem": "Windows 10, 11",
         "sameAs": "https://github.com/MurkyYT/CSAuto",
@@ -55,7 +58,7 @@
     <script defer src="/_vercel/insights/script.js"></script>
     
 </head>
-<body>
+<body dir="ltr">
     
     <input type="checkbox" id="about-modal-open">
     <dialog id="modal-about">
@@ -67,7 +70,7 @@
             <p>
                 Counter-Strike 2 companion that automates in-game tasks, such as accepting match, buying items and more
                 <br><br>
-                CSAuto was created and is actively maintained by <a aria-label="GitHub developer profile" href="https://github.com/MurkyYT">Murky</a> with <a aria-label="CSAuto repository on GitHub" href="https://github.com/MurkyYT/CSAuto">Source code available on GitHub.</a>
+                CSAuto was created and is actively maintained by  <a aria-label="GitHub developer profile" href="https://github.com/MurkyYT">Murky</a>. <a aria-label="CSAuto repository on GitHub" href="https://github.com/MurkyYT/CSAuto">Source code available on GitHub.</a>
                 <br><br>
                 <a aria-label="Website source code on GitHub" href="https://github.com/MurkyYT/cs-auto">Source code</a> of this website also available on GitHub.
             </p>
@@ -76,12 +79,20 @@
             </footer>
         </article>
     </dialog>
-    <nav class="container-fluid">
+    <nav class="container-fluid"> 
         <ul><a href="https://github.com/MurkyYT/CSAuto"><li><img alt="CSAuto" src="public\logo.svg" width="64"></li><li><h4 style="margin: 0;">CSAuto</h4></li><a></ul>
         <ul>
             <li><a href="/">Home</a></li>
             <li><a href="/changelog" role="button">Changelog</a></li>
             <li><label role="link" for="about-modal-open">About</label></li>
+            <li>
+                <details class="dropdown languages">
+                    <summary>English</summary>
+                    <ul dir="rtl">
+                        <li><a href="/ru">Русский (Russian)</a></li>
+                    </ul>
+                </details>
+            </li>
         </ul>
     </nav>
     
@@ -90,7 +101,7 @@
 <h4>Changelog also available as <a href="https://github.com/MurkyYT/CSAuto/blob/master/Docs/FullChangelog.MD">single .MD file on GitHub</a></h4>
 <hr>
 
-<article>
+<article> 
     <h3>Version 2.0.9 changelog</h3>
 <ul>
 <li>All Discord settings are now in the same place</li>
@@ -115,7 +126,7 @@
 
 </article>
 
-<article>
+<article> 
     <h3>Version 2.0.8 changelog</h3>
 <ul>
 <li>Markdown parser updated, changelog now looks a bit different</li>
@@ -141,7 +152,7 @@
 
 </article>
 
-<article>
+<article> 
     <h3>Version 2.0.7 changelog</h3>
 <ul>
 <li>Fix with app crashing when <code>steamapi.exe</code> cant be launched</li>
@@ -158,7 +169,7 @@
 
 </article>
 
-<article>
+<article> 
     <h3>Version 2.0.6 changelog</h3>
 <ul>
 <li>Optimzation of program idle state</li>
@@ -182,7 +193,7 @@
 
 </article>
 
-<article>
+<article> 
     <h3>Version 2.0.5a changelog</h3>
 <ul>
 <li>I feel very ashamed but screen capture still crashes so <strong>now</strong> hopefully it will not as the DXGICapture lib doesn't use pointers anymore and i did some security precautions in the app itself, if it will still crash i will probably port the native c++ code to c#, unfortunately</li>
@@ -190,7 +201,7 @@
 
 </article>
 
-<article>
+<article> 
     <h3>Version 2.0.5 changelog</h3>
 <ul>
 <li>Changed default intaller location because can't create files in admin protected folders</li>
@@ -202,7 +213,7 @@
 
 </article>
 
-<article>
+<article> 
     <h3>Version 2.0.4 changelog</h3>
 <ul>
 <li>Fix bug with spotify auto play</li>
@@ -214,7 +225,7 @@
 
 </article>
 
-<article>
+<article> 
     <h3>Version 2.0.3 changelog</h3>
 <ul>
 <li>Discord Rich Presence map image now loads from the web</li>
@@ -224,7 +235,7 @@
 
 </article>
 
-<article>
+<article> 
     <h3>Version 2.0.2 changelog</h3>
 <ul>
 <li>App crash handling should be better now</li>
@@ -234,7 +245,7 @@
 
 </article>
 
-<article>
+<article> 
     <h3>Version 2.0.1 changelog</h3>
 <ul>
 <li>Fixes <a href="https://github.com/MurkyYT/CSAuto/issues/22" data-tooltip="Issue: Screen capture crashes">#22</a></li>
@@ -242,7 +253,7 @@
 
 </article>
 
-<article>
+<article> 
     <h3>Version 2.0.0 changelog</h3>
 <p><strong>Counter-Strike 2 Released and so did CSAuto v2</strong></p>
 <ul>
@@ -279,7 +290,7 @@
 
 </article>
 
-<article>
+<article> 
     <h3>2.0.0-beta.6 Changelog</h3>
 <ul>
 <li>Loading button colors from web, if cant load latest colors</li>
@@ -289,7 +300,7 @@
 
 </article>
 
-<article>
+<article> 
     <h3>2.0.0-beta.5 Changelog</h3>
 <ul>
 <li>More fixes with DXGICapture (help)</li>
@@ -310,7 +321,7 @@
 
 </article>
 
-<article>
+<article> 
     <h3>2.0.0-beta.4 Changelog</h3>
 <ul>
 <li>Latest CS2 Update changed accept button color, corrected for that</li>
@@ -319,7 +330,7 @@
 
 </article>
 
-<article>
+<article> 
     <h3>2.0.0-beta.3 Changelog</h3>
 <ul>
 <li>Some more memory optimizations!</li>
@@ -332,7 +343,7 @@
 
 </article>
 
-<article>
+<article> 
     <h3>2.0.0-beta.2 Changelog</h3>
 <ul>
 <li>Optimized app even more</li>
@@ -345,7 +356,7 @@
 
 </article>
 
-<article>
+<article> 
     <h3>2.0.0-beta.1 Changelog</h3>
 <ul>
 <li>Bug fix with frame capture</li>
@@ -358,7 +369,7 @@
 
 </article>
 
-<article>
+<article> 
     <h3>Version 2.0.0-beta changelog</h3>
 <p><strong>As Counter-Strike 2 is in kinda open beta, i decided to release 2.0.0-beta so that i can eliminate all bugs before cs2's full release!</strong>
 <strong>I would like you to send an issue if you encounter any bug or unusual behaviour, thanks in advance!</strong></p>
@@ -367,7 +378,7 @@
 
 </article>
 
-<article>
+<article> 
     <h3>Version 1.1.2 changelog</h3>
 <ol>
 <li>Changed how bomb notifications work in telegram (<a href="https://github.com/MurkyYT/CSAuto/issues/16" data-tooltip="Issue: Change the way how bomb notification sends">#16</a> )</li>
@@ -383,7 +394,7 @@
 
 </article>
 
-<article>
+<article> 
     <h3>Version 1.1.1 changelog</h3>
 <ol>
 <li>Languages now work differently in app</li>
@@ -394,7 +405,7 @@
 
 </article>
 
-<article>
+<article> 
     <h3>Version 1.1.0 changelog</h3>
 <ol>
 <li>Added mobile notification menu where you can disable different notifications</li>
@@ -414,7 +425,7 @@
 
 </article>
 
-<article>
+<article> 
     <h3>Version 1.0.9 changelog</h3>
 <ol>
 <li>Added languages to the application, available languages right now are: English and Russian.</li>
@@ -435,7 +446,7 @@
 
 </article>
 
-<article>
+<article> 
     <h3>Version 1.0.8 changelog</h3>
 <ol>
 <li>Discord RPC and GameState Server are now started when cs is started and disabled when cs is closed</li>
@@ -459,7 +470,7 @@ After that you should be good to go.</li>
 
 </article>
 
-<article>
+<article> 
     <h3>Version 1.0.7 changelog</h3>
 <ol>
 <li>Made button search on all screen height and not half of it</li>
@@ -470,7 +481,7 @@ After that you should be good to go.</li>
 
 </article>
 
-<article>
+<article> 
     <h3>Version 1.0.6 changelog</h3>
 <ol>
 <li>When auto buying stuff chat and console are closed</li>
@@ -481,7 +492,7 @@ After that you should be good to go.</li>
 
 </article>
 
-<article>
+<article> 
     <h3>Version 1.0.5a changes</h3>
 <ol>
 <li>Discord rpc now shows time elapsed from match start/time in lobby</li>
@@ -490,7 +501,7 @@ After that you should be good to go.</li>
 
 </article>
 
-<article>
+<article> 
     <h3>Version 1.0.5 fixes</h3>
 <ol>
 <li>Using latest release github api to find the latest tag</li>
@@ -498,7 +509,7 @@ After that you should be good to go.</li>
 
 </article>
 
-<article>
+<article> 
     <h3>Version 1.0.4 updates</h3>
 <ol>
 <li>Discord RPC now shows time elapsed from match started</li>
@@ -513,7 +524,7 @@ After that you should be good to go.</li>
 
 </article>
 
-<article>
+<article> 
     <h3>Version 1.0.3 updates</h3>
 <ol>
 <li>Added DiscordRPC implementation</li>
@@ -523,7 +534,7 @@ After that you should be good to go.</li>
 
 </article>
 
-<article>
+<article> 
     <h3>Version 1.0.2a updates</h3>
 <ol>
 <li>You have an option to enable checking for updates on startup</li>
@@ -539,7 +550,7 @@ After that you should be good to go.</li>
 
 </article>
 
-<article>
+<article> 
     <h3>Version 1.0.2 updates</h3>
 <ol>
 <li>Added automatic resuming or pausing of spotify song (when you are alive the song is paused)</li>
@@ -547,7 +558,7 @@ After that you should be good to go.</li>
 
 </article>
 
-<article>
+<article> 
     <h3>Version 1.0.1 fixes</h3>
 <ol>
 <li>Fixed a bug when logging wont turn on with app on windows startup</li>

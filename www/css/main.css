@@ -30,7 +30,7 @@ footer {
 
 nav h4 {
     /*lil crutch*/
-    @media screen and (max-width: 400px) {
+    @media screen and (max-width: 527px) {
         display: none;
     }
 }
@@ -40,7 +40,7 @@ html {
 }
 
 main {
-    margin-top: 90px;
+    margin-top: 100px;
 }
 
 /* index.html */
@@ -189,7 +189,7 @@ dialog footer p {
     border-radius: 0.25em;
 }
 
-.DownloadColumn a {
+.DownloadColumn a {  /* TODO: change bg color to match light theme */
     width: fit-content;
     height: fit-content;
     padding: 10px;

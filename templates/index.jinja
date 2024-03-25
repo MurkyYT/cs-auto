@@ -3,76 +3,67 @@
     <main>
         <section class="BadgesDownload">
             <div class="badges" align="center">
-                <a href="https://github.com/MurkyYT/CSAuto"><img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/murkyyt/csauto?style=for-the-badge&logo=github"></a>
-                <a href="https://github.com/MurkyYT/CSAuto/releases"><img alt="Total Downloads" width="auto" src="https://img.shields.io/github/downloads/murkyyt/csauto/total?color=brightgreen&logo=github&label=Total%20downloads&style=for-the-badge"></a>
-                <a href="https://github.com/MurkyYT/CSAuto/releases"><img alt="Version" src="https://img.shields.io/github/v/release/MurkyYT/CSAuto?logo=github&style=for-the-badge"></a>
-                <a href="https://discord.gg/57ZEVZgm5W"><img alt="Join Discord" src="https://dcbadge.vercel.app/api/server/57ZEVZgm5W"></a>
+                <a href="https://github.com/MurkyYT/CSAuto"><img alt="{{_('alt_github_repo_stars_badge')}}" src="https://img.shields.io/github/stars/murkyyt/csauto?style=for-the-badge&logo=github"></a>
+                <a href="https://github.com/MurkyYT/CSAuto/releases"><img alt="{{_('alt_total_downloads_badge')}}" width="auto" src="https://img.shields.io/github/downloads/murkyyt/csauto/total?color=brightgreen&logo=github&label=Total%20downloads&style=for-the-badge"></a>
+                <a href="https://github.com/MurkyYT/CSAuto/releases"><img alt="{{_('alt_version_badge')}}" src="https://img.shields.io/github/v/release/MurkyYT/CSAuto?logo=github&style=for-the-badge"></a>
+                <a href="https://discord.gg/57ZEVZgm5W"><img alt="{{_('alt_join_discord')}}" src="https://dcbadge.vercel.app/api/server/57ZEVZgm5W"></a>
             </div>
-            <div align="center"><a href="#downloads" role="button">Download</a>&nbsp<a href="#FAQ" role="button">FAQ</a></div>
+            <div align="center"><a href="#downloads" role="button">{{_('download_button')}}</a>&nbsp<a href="#FAQ" role="button">{{_('faq_button')}}</a></div>
         </section>
         <section class="container-fluid FeaturesSection">
-            <h1 align="center">Features of CSAuto</h1>
+            <h1 align="center">{{_('h1_csauto_features')}}</h1>
             <div class="feature">
                 <div class="col-1">
-                    <video src="public/videos/auto-accept.mp4" autoplay muted loop alt="Auto accept example"></video>
+                    <video src="{{ path_prefix }}public/videos/auto-accept.mp4" autoplay muted loop alt="{{_('alt_autoaccept_video')}}"></video>
                 </div>
                 <div class="col-2">
-                    <h2>Auto accept matches</h2>
+                    <h2>{{_('h2_autoaccept')}}</h2>
                     <p>
-                        CSAuto can automatically accept matches for you<br>
-                        All you have to do is wait for the match to be found<br>
-                        You can go do some stuff while the match is being searched<br>
-                        Also, you can receive notifications in Telegram and Mobile application
+                        {{_('desc_autoaccept')}}
                     </p>
                 </div>
             </div>
             <div class="feature row-2">
                 <div class="col-1">
-                    <h2>Automatically buy selected items</h2>
+                    <h2>{{_('h2_autobuy')}}</h2>
                     <p>
-                        Customizable buy menu loadout for each team<br>
-                        Auto buy enabled items with priority settings<br>
-                        Buys only at freezetime and rebuys armor when less or equals 70
+                        {{_('desc_autobuy')}}
                     </p>
                 </div>
                 <div class="col-2">
-                    <video src="public/videos/auto-buy.mp4" autoplay muted loop alt="Auto buy example"></video>
+                    <video src="{{ path_prefix }}public/videos/auto-buy.mp4" autoplay muted loop alt="{{_('alt_autobuy_video')}}"></video>
                 </div>
             </div>
             <div class="feature">
                 <div class="col-1">
-                    <video src="public/videos/auto-spotify-play.mp4" autoplay muted loop alt="Auto pause Spotify example"></video>
+                    <video src="{{ path_prefix }}public/videos/auto-spotify-play.mp4" autoplay muted loop alt="{{_('alt_spotify_video')}}"></video>
                 </div>
                 <div class="col-2">
-                    <h2>Auto pause/resume Spotify song</h2>
+                    <h2>{{_('h2_spotify')}}</h2>
                     <p>
-                        Automatically pauses Spotify song while you're alive<br>
-                        When you die, CSAuto will resume the song<br>
-                        That way you can listen to a song and still hear the game when needed
+                        {{_('desc_spotify')}}
                     </p>
                 </div>
             </div>
             <div class="feature row-2">
                 <div class="col-1">
-                    <h2>Auto reload weapon</h2>
+                    <h2>{{_('h2_autoreload')}}</h2>
                     <p>
-                        Automatically reloads your weapon when you have 0 bullets left<br>
-                        Can continue spraying afterwards, sometimes it's lagging out
+                        {{_('desc_autoreload')}}
                     </p>
                 </div>
                 <div class="col-2">
-                    <video src="public/videos/auto-reload.mp4" autoplay muted loop alt="Auto reload example"></video>
+                    <video src="{{ path_prefix }}public/videos/auto-reload.mp4" autoplay muted loop alt="{{_('alt_autoreload_video')}}"></video>
                 </div>
             </div>
             <div class="feature">
                 <div class="col-1">
-                    <img src="public/images/discord-rpc.png" alt="Discord RPC settings and examples">
+                    <img src="{{ path_prefix }}public/images/discord-rpc.png" alt="{{_('alt_discord_rpc_image')}}">
                 </div>
                 <div class="col-2">
-                    <h2>Customizable Discord Rich Presence</h2>
+                    <h2>{{_('h2_discord_rpc')}}</h2>
                     <p>
-                        You can use built-in templates to change the presence state/details<br>
-                        In addition, you can add one custom button with a custom link
+                        {{_('desc_discord_rpc')}}
                     </p>
                 </div>
             </div>
@@ -81,31 +72,31 @@
             <div class="downloads grid">
                 <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
                 <div class="DownloadColumn">
-                    <h4>Binary installers</h4>
+                    <h4>{{_('binary_installers')}}</h4>
                     <hr>
                     <h5>Windows</h5>
                     <a role="button" href="https://github.com/MurkyYT/CSAuto/releases/download/{{latest_version}}/CSAuto_Installer.exe">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"/></svg>
 
-                        Installer (.EXE)</a>
+                        {{_('installer')}} (.EXE)</a>
                     <a role="button" href="https://github.com/MurkyYT/CSAuto/releases/download/{{latest_version}}/CSAuto_Portable.zip">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V160H256c-17.7 0-32-14.3-32-32V0H64zM256 0V128H384L256 0zM96 48c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16s-7.2 16-16 16H112c-8.8 0-16-7.2-16-16zm0 64c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16s-7.2 16-16 16H112c-8.8 0-16-7.2-16-16zm0 64c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16s-7.2 16-16 16H112c-8.8 0-16-7.2-16-16zm-6.3 71.8c3.7-14 16.4-23.8 30.9-23.8h14.8c14.5 0 27.2 9.7 30.9 23.8l23.5 88.2c1.4 5.4 2.1 10.9 2.1 16.4c0 35.2-28.8 63.7-64 63.7s-64-28.5-64-63.7c0-5.5 .7-11.1 2.1-16.4l23.5-88.2zM112 336c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16H112z"/></svg>
 
-                        Portable (.ZIP)</a>
+                        {{_('portable')}} (.ZIP)</a>
                     <hr>
                     <h5>Android</h5>
                     <a role="button" href="https://github.com/MurkyYT/CSAuto/releases/download/{{latest_version}}/CSAuto_Android.apk">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M420.6 301.9a24 24 0 1 1 24-24 24 24 0 0 1 -24 24m-265.1 0a24 24 0 1 1 24-24 24 24 0 0 1 -24 24m273.7-144.5 47.9-83a10 10 0 1 0 -17.3-10h0l-48.5 84.1a301.3 301.3 0 0 0 -246.6 0L116.2 64.5a10 10 0 1 0 -17.3 10h0l47.9 83C64.5 202.2 8.2 285.6 0 384H576c-8.2-98.5-64.5-181.8-146.9-226.6"/></svg>
                         
-                        Installer (.APK)</a>
+                        {{_('installer')}} (.APK)</a>
                     <hr>
                     <a role="button" href="https://github.com/MurkyYT/CSAuto/releases">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg>
                         
-                        All versions</a>
+                        {{_('all_versions')}}</a>
                 </div>
                 <div class="DownloadColumn">
-                    <h4>App Managers</h4>
+                    <h4>{{_('h4_app_managers')}}</h4>
                     <hr>
                     <h5>Windows</h5>
                     <div role="group" id="scoop">
