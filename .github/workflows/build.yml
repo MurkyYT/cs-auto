@@ -28,4 +28,4 @@ jobs:
               with:
                 add: 'www'
                 default_author: github_actions
-                message: "Build static html"
+                message: "task(html): build static html"
