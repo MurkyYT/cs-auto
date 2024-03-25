@@ -66,7 +66,7 @@ msgstr "Главная"
 
 #: templates/base.jinja:94
 msgid "nav_changelog"
-msgstr "Changelog"
+msgstr "Журнал изменений"
 
 #: templates/base.jinja:95
 msgid "nav_about"
