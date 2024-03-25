@@ -62,6 +62,7 @@ class Render:
         self.engine.globals["base_url"] = str(base_url)
         self.engine.globals["language"] = lang
         self.engine.globals["languages"] = SUPPORTED_LANGUAGES
+        self.engine.globals["default_language"] = DEFAULT_LANGUAGE
         self.engine.globals["len_languages"] = len(SUPPORTED_LANGUAGES)
         self.engine.globals["root_level"] = int(self.lang is not DEFAULT_LANGUAGE)  # 1 / 0
         self.engine.globals["path_prefix"] = ('/'.join(('..', )) * int(self.lang is not DEFAULT_LANGUAGE)) + "/" * int(self.lang is not DEFAULT_LANGUAGE)
