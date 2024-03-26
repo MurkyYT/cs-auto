@@ -37,7 +37,7 @@
         },
         "availableLanguage": [
             [{"@type": "Language", "name": "English"}, {"@type": "Language", "name": "Russian"}]
-        ]
+        ],
         "applicationCategory": "Game",
         "applicationSubCategory": "Tools",
         "keywords": "CS, CS2, cs, cs2, automation, gsi, csgsi, Counter-Strike, Counter-Strike 2, CS2, counter strike, software, application, app, cs auto accept, auto accept, CS2 auto accept",
@@ -102,6 +102,26 @@
 <main class="container">
 <h4>Changelog also available as <a href="https://github.com/MurkyYT/CSAuto/blob/master/Docs/FullChangelog.MD">single .MD file on GitHub</a></h4>
 <hr>
+
+<article> 
+    <h3 id="210">Version 2.1.0 changelog <a class="header-anchor" href="#210">#</a></h3>
+<ul>
+<li>Changed the title, it is now centered and shows <code>CSAuto</code> in bold with the version</li>
+<li>Added new launch option, <code>--log</code>, enabling logging, regardless of whether it is enabled in the settings, doesn't change the settings</li>
+<li>Small fix with spotify process finding</li>
+<li>Changes to russian translation (<code>Загрузить настройки</code> -&gt; <code>Экспортировать настройки</code>)</li>
+<li>Settings importing now shows the gui window only if it was open before</li>
+<li>Languages now interpolates '\n' correctly</li>
+<li>Languages are now stored as resources, fixes gui window not always showing text</li>
+<li>Fixed a bug when entering debug category, log will always scroll down</li>
+<li>Added new automation feature, <code>CSAuto</code> can try to focus on cs window when game is found, only if enabled in settings</li>
+<li>If <code>CSAuto</code> focused on cs window it can focus back to the original window</li>
+<li>New launch option, <code>--cs</code>, launches CS together with <code>CSAuto</code></li>
+<li><code>CSAuto</code> now tries to load workshop maps icons as well</li>
+<li><code>--language</code> now uses two letters to represent languages, e.g <code>en</code> or <code>ru</code></li>
+</ul>
+
+</article>
 
 <article> 
     <h3 id="209">Version 2.0.9 changelog <a class="header-anchor" href="#209">#</a></h3>
