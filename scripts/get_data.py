@@ -1,9 +1,13 @@
+from dataclasses import dataclass
 from datetime import datetime
+from functools import cache
 import os
+import json
+
 import httpx
 from loguru import logger
 
-from shared import DEFAULT_LANGUAGE, LANGUAGES, URLS
+from shared import URLS, LANGUAGES_IDS_STR_LITERAL, DEFAULT_LANGUAGE_ID
 
 import typing as t
 
@@ -13,11 +17,23 @@ try:
 except ImportError:
     pass
 
+@dataclass
+class ChangelogItem:
+    body: str             # filtered_body
+    url: str | httpx.URL  # html_url
+    version: str          # tag_name
+    
+    html_body: t.Optional[str] = None
+    
+    @classmethod
+    def from_dict(cls, data: dict):
+        return cls(body=data["filtered_body"], url=data["html_url"], version=data["tag_name"])
+
 class BaseDataProvider:
-    def get_readme(self, lang: LANGUAGES = DEFAULT_LANGUAGE) -> str:
+    def get_readme(self, lang: LANGUAGES_IDS_STR_LITERAL = DEFAULT_LANGUAGE_ID) -> str:
         raise NotImplementedError
     
-    def get_faq(self, lang: LANGUAGES = DEFAULT_LANGUAGE) -> str:
+    def get_faq(self, lang: LANGUAGES_IDS_STR_LITERAL = DEFAULT_LANGUAGE_ID) -> str:
         FAQ_BEGIN_STRING = "## FAQ"
         FAQ_END_STRING = "\n## "
         
@@ -33,7 +49,7 @@ class BaseDataProvider:
             faq_end_index = len(readme)
         return readme[faq_begin_index:faq_end_index]
     
-    def get_changelog(self) -> list[str]:
+    def get_changelog(self) -> list[ChangelogItem]:
         raise NotImplementedError
     
     def get_colors(self) -> str:
@@ -44,22 +60,26 @@ class BaseDataProvider:
 
 
 class RawGithubProvider(BaseDataProvider):
-    def get_readme(self, lang: LANGUAGES = DEFAULT_LANGUAGE) -> str:
+    @cache
+    def get_readme(self, lang: LANGUAGES_IDS_STR_LITERAL = DEFAULT_LANGUAGE_ID) -> str:
         resp = httpx.get(url=URLS.RAW_README[lang])
         return resp.text
     
-    def get_changelog_md(self) -> str:
+    @cache
+    def get_changelog_json(self) -> list:
         resp = httpx.get(url=URLS.RAW_CHANGELOG)
-        return resp.text
+        return resp.json()
     
-    def get_changelog(self) -> list[str]:
-        changelog_md = self.get_changelog_md()
-        return list(changelog_md.split("<!--Version split-->"))
+    def get_changelog(self) -> list[ChangelogItem]:
+        changelog_json = self.get_changelog_json()
+        return list(map(ChangelogItem.from_dict, changelog_json))
     
+    @cache
     def get_colors(self) -> str:
         resp = httpx.get(url=URLS.RAW_COLORS)
         return resp.text
     
+    @cache
     def get_version(self) -> str:
         raw_resp = httpx.get(URLS.RELEASES_API, headers={"X-GitHub-Api-Version": "2022-11-28"})
         logger.debug(f"Releases response: {raw_resp.status_code}")
@@ -68,13 +88,13 @@ class RawGithubProvider(BaseDataProvider):
 
 
 class LocalFileProvider(RawGithubProvider):
-    def get_readme(self, lang: LANGUAGES = DEFAULT_LANGUAGE) -> str:
-        with open(os.environ[f"CSAUTO_README_{lang.value.upper()}"], mode="r", encoding="utf-8") as f:
+    def get_readme(self, lang: LANGUAGES_IDS_STR_LITERAL = DEFAULT_LANGUAGE_ID) -> str:
+        with open(os.environ[f"CSAUTO_README_{lang.upper()}"], mode="r", encoding="utf-8") as f:
             return f.read()
     
-    def get_changelog_md(self) -> str:
+    def get_changelog_json(self) -> list:
         with open(os.environ["CSAUTO_CHANGELOG"], mode="r", encoding="utf-8") as f:
-            return f.read()
+            return json.load(f)
     
     def get_colors(self) -> str:
         return "54,183,82\n59,198,90"

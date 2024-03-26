@@ -21,6 +21,7 @@ nav {
     top: 0;
     background-color: var(--bg-secondary);
     z-index: 2;
+    box-shadow: 0 3px 4px 0 rgba(0,0,0,.3);
 }
 
 footer {
@@ -30,17 +31,17 @@ footer {
 
 nav h4 {
     /*lil crutch*/
-    @media screen and (max-width: 400px) {
+    @media screen and (max-width: 700px) {
         display: none;
     }
 }
 
 html {
-    scroll-padding-top: 100px;  /* Jump to section & ignore nav */
+    scroll-padding-top: 120px;  /* Jump to section & ignore nav */
 }
 
 main {
-    margin-top: 90px;
+    margin-top: 100px;
 }
 
 /* index.html */
@@ -198,3 +199,9 @@ dialog footer p {
 .DownloadColumn hr {
     margin: 0px;
 }
+
+/* Changelog */
+
+/*article h3 .header-anchor {
+
+}*/

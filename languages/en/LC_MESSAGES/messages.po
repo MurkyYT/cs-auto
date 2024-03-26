@@ -1,0 +1,199 @@
+# English translations for csauto-web.
+# Copyright (C) 2024 csauto-web
+# This file is distributed under the same license as the csauto-web project.
+# FIRST AUTHOR NoPlagiarism@example.com, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: csauto-web VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2024-03-25 13:16+0500\n"
+"PO-Revision-Date: 2024-03-25 13:29+0500\n"
+"Last-Translator: \n"
+"Language-Team: en <NoPlagiarism@example.com>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Generated-By: Babel 2.14.0\n"
+"X-Generator: Poedit 3.4.2\n"
+
+#: templates/base.jinja:11 templates/base.jinja:49
+msgid "meta_csauto_tags"
+msgstr "CS, CS2, cs, cs2, automation, gsi, csgsi, Counter-Strike, Counter-Strike 2, CS2, counter strike, software, application, app, cs auto accept, auto accept, CS2 auto accept"
+
+#: templates/base.jinja:12 templates/base.jinja:17 templates/base.jinja:22
+#: templates/base.jinja:50 templates/base.jinja:79
+msgid "csauto_description"
+msgstr "Counter-Strike 2 companion that automates in-game tasks, such as accepting match, buying items and more"
+
+#: templates/base.jinja:76
+msgid "modal_about_title"
+msgstr "About"
+
+#: templates/base.jinja:81
+msgid "about_modal_murky_mention"
+msgstr "CSAuto was created and is actively maintained by "
+
+#: templates/base.jinja:81
+msgid "about_modal_murky_label"
+msgstr "GitHub developer profile"
+
+#: templates/base.jinja:81
+msgid "about_modal_source_code_link_label"
+msgstr "CSAuto repository on GitHub"
+
+#: templates/base.jinja:81
+msgid "about_modal_source_code_link"
+msgstr "Source code available on GitHub."
+
+#: templates/base.jinja:83
+msgid "about_modal_web_source_label"
+msgstr "Website source code on GitHub"
+
+#: templates/base.jinja:83
+msgid "about_modal_web_source"
+msgstr "Source code</a> of this website also available on GitHub."
+
+#: templates/base.jinja:86
+msgid "about_modal_with_love_made_by"
+msgstr "Website made with 💜 by "
+
+#: templates/base.jinja:93
+msgid "nav_home"
+msgstr "Home"
+
+#: templates/base.jinja:94
+msgid "nav_changelog"
+msgstr "Changelog"
+
+#: templates/base.jinja:95
+msgid "nav_about"
+msgstr "About"
+
+#: templates/base.jinja:103
+msgid "footer_csauto_not_affiliated"
+msgstr "This website and CSAuto are not affiliated, endorsed by, or in any way officially connected with <a href=\"https://www.valvesoftware.com/\">Valve</a> and/or <a href=\"https://www.counter-strike.net/\">Counter-Strike</a>"
+
+#: templates/index.jinja:6
+msgid "alt_github_repo_stars_badge"
+msgstr "GitHub Repo stars"
+
+#: templates/index.jinja:7
+msgid "alt_total_downloads_badge"
+msgstr "Total Downloads"
+
+#: templates/index.jinja:8
+msgid "alt_version_badge"
+msgstr "Version"
+
+#: templates/index.jinja:9
+msgid "alt_join_discord"
+msgstr "Join Discord Server"
+
+#: templates/index.jinja:11
+msgid "download_button"
+msgstr "Download"
+
+#: templates/index.jinja:11
+msgid "faq_button"
+msgstr "FAQ"
+
+#: templates/index.jinja:14
+msgid "h1_csauto_features"
+msgstr "Features of CSAuto"
+
+#: templates/index.jinja:17
+msgid "alt_autoaccept_video"
+msgstr "Auto accept examples"
+
+#: templates/index.jinja:20
+msgid "h2_autoaccept"
+msgstr "Auto accept matches"
+
+#: templates/index.jinja:22
+msgid "desc_autoaccept"
+msgstr ""
+"CSAuto can automatically accept matches for you<br>\n"
+"All you have to do is wait for the match to be found<br>\n"
+"You can go do some stuff while the match is being searched<br>\n"
+"Also, you can receive notifications in Telegram and Mobile application"
+
+#: templates/index.jinja:28
+msgid "h2_autobuy"
+msgstr "Automatically buy selected items"
+
+#: templates/index.jinja:30
+msgid "desc_autobuy"
+msgstr ""
+"Customizable buy menu loadout for each team<br>\n"
+"Auto buy enabled items with priority settings<br>\n"
+"Buys only at freezetime and rebuys armor when less or equals 70"
+
+#: templates/index.jinja:34
+msgid "alt_autobuy_video"
+msgstr "Auto buy example"
+
+#: templates/index.jinja:39
+msgid "alt_spotify_video"
+msgstr "Auto pause Spotify example"
+
+#: templates/index.jinja:42
+msgid "h2_spotify"
+msgstr "Auto pause/resume Spotify song"
+
+#: templates/index.jinja:44
+msgid "desc_spotify"
+msgstr ""
+"Automatically pauses Spotify song while you're alive<br>\n"
+"When you die, CSAuto will resume the song<br>\n"
+"That way you can listen to a song and still hear the game when needed"
+
+#: templates/index.jinja:50
+msgid "h2_autoreload"
+msgstr "Auto reload weapon"
+
+#: templates/index.jinja:52
+msgid "desc_autoreload"
+msgstr ""
+"Automatically reloads your weapon when you have 0 bullets left<br>\n"
+"Can continue spraying afterwards, sometimes it's lagging out"
+
+#: templates/index.jinja:56
+msgid "alt_autoreload_video"
+msgstr "Auto reload example"
+
+#: templates/index.jinja:61
+msgid "alt_discord_rpc_image"
+msgstr "Discord RPC settings and example"
+
+#: templates/index.jinja:64
+msgid "h2_discord_rpc"
+msgstr "Customizable Discord Rich Presence"
+
+#: templates/index.jinja:66
+msgid "desc_discord_rpc"
+msgstr ""
+"You can use built-in templates to change the presence state/details<br>\n"
+"In addition, you can add one custom button with a custom link"
+
+#: templates/index.jinja:75
+msgid "binary_installers"
+msgstr "Binary installers"
+
+#: templates/index.jinja:81 templates/index.jinja:91
+msgid "installer"
+msgstr "Installer"
+
+#: templates/index.jinja:85
+msgid "portable"
+msgstr "Portable"
+
+#: templates/index.jinja:96
+msgid "all_versions"
+msgstr "All versions"
+
+#: templates/index.jinja:99
+msgid "h4_app_managers"
+msgstr "App Managers"

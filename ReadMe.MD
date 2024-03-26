@@ -12,6 +12,7 @@ Source code of [CSAuto website](https://csauto.vercel.app). ( [CSAuto repo](http
 - [loguru](https://github.com/Delgan/loguru) to log
 - Also, [FastAPI](https://fastapi.tiangolo.com) and [Uvicorn](https://www.uvicorn.org) for live debugging
 - [python-dotenv](https://github.com/theskumar/python-dotenv) for reading .env files
+- [Babel](https://babel.pocoo.org) for help with localizing
 
 ### Deserves mention
 
@@ -19,6 +20,10 @@ Source code of [CSAuto website](https://csauto.vercel.app). ( [CSAuto repo](http
 - [Scoop svg logo](https://github.com/ScoopInstaller/Scoop/discussions/5516) by @xmha97
 
 ## Development
+
+### Software recommendations
+
+- [Visual Studio Code](https://code.visualstudio.com) or [VSCodium](https://vscodium.com)
 
 ### Setting up environment
 
@@ -66,6 +71,32 @@ poetry shell
   - Default: *False*
   - Value: Boolean (`True`/`False` or `1`/`0`)
 
+### Translating
+
+> Translate [CSAuto](https://github.com/MurkyYT/CSAuto) first
+
+- Language codes with territories are undesirable
+  - ~~ru_MD~~ ➡ ru
+  - ~~en_CA~~ ➡ en
+- Use `<br>` to go to new line
+- If you see closing tag in original, you must write same closing tag in translation
+
+- Extract strings
+  - `pybabel -v extract -F .\babel.cfg -o ".\languages\messages.pot" --project "csauto-web" --sort-by-file .`
+- Init new language
+  - `pybabel init -d .\languages\ -i .\languages\messages.pot -l {LOCALE}`
+- How to update
+  - `pybabel update -d .\languages\ -i .\languages\messages.pot -l {LOCALE}`
+- Compile .po to .mo
+  - `pybabel compile -d .\languages\`
+
+Steps to manually add new language:
+
+- Extract strings
+- Init new language
+- Edit lines in [`shared.py`](https://github.com/MurkyYT/cs-auto/blob/master/scripts/shared.py)
+
 ## TO-DO
 
-- [ ] Add support for translations
+- [X] Add support for translations
+  - [ ] Add WebLate support
