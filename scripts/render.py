@@ -8,6 +8,7 @@ from loguru import logger
 import json
 from jinja2 import Environment, FileSystemLoader
 
+from anchor import anchors_plugin
 from env import CSAUTO_BASE_URL, CSAUTO_DISABLE_META
 from shared import DEFAULT_LANGUAGE, Paths, LANGUAGES_IDS_STR_LITERAL, compile_translations, SUPPORTED_LANGUAGES
 from github_md import GHReferenceRenderer
@@ -31,6 +32,7 @@ class gfm_like_custom:  # noqa: N801
         config = commonmark.make()
         config["components"]["core"]["rules"].append("GHRefLink_core")
         config["components"]["core"]["rules"].append("linkify")
+        config["components"]["core"]["rules"].append("anchor")
         config["components"]["block"]["rules"].append("table")
         config["components"]["inline"]["rules"].extend(["strikethrough", "linkify"])
         config["components"]["inline"]["rules2"].append("strikethrough")
@@ -52,6 +54,7 @@ class Render:
         self.gh_ref = GHReferenceRenderer()
         self.gh_ref.cache_all()
         self.markdown.use(self.gh_ref)
+        self.markdown.use(anchors_plugin)
         self.markdown.configure(gfm_like_custom.make())
         
         self.engine = Environment(loader=FileSystemLoader(Paths.TEMPLATES_DIR), extensions=["jinja2.ext.i18n"])

@@ -37,7 +37,7 @@ nav h4 {
 }
 
 html {
-    scroll-padding-top: 100px;  /* Jump to section & ignore nav */
+    scroll-padding-top: 120px;  /* Jump to section & ignore nav */
 }
 
 main {
@@ -199,3 +199,9 @@ dialog footer p {
 .DownloadColumn hr {
     margin: 0px;
 }
+
+/* Changelog */
+
+/*article h3 .header-anchor {
+
+}*/
