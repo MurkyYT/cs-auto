@@ -11,6 +11,10 @@
     <meta name="keywords" content="{{ _('meta_csauto_tags') }}">
     <meta name="description" content="{{ _('csauto_description') }}">
     <meta name="author" content="Murky">
+    {# XXX: Only home support #}
+    {% if active_nav=="home" %}<!--Alternate links-->
+    {% for x in languages %}<link rel="alternate" hreflang="{{ x.language }}" href="{{ base_url }}{% if default_language.language is ne x.language %}{{ x.language }}{% endif %}" />
+    {% endfor %}{% endif %}
     <!--OPEN GRAPH-->
     <meta name="og:type" content="website">
     <meta name="og:title" content="CSAuto">
