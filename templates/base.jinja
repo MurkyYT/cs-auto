@@ -83,7 +83,7 @@
             </footer>
         </article>
     </dialog>
-    <nav class="container-fluid"> {# TODO: Add shadow under nav? #}
+    <nav class="container-fluid">
         <ul><a href="https://github.com/MurkyYT/CSAuto"><li><img alt="CSAuto" src="{{ '/'.join(('..', ) * root_level) }}{% if root_level is not eq(0) %}/{% endif %}public\logo.svg" width="64"></li><li><h4 style="margin: 0;">CSAuto</h4></li><a></ul>
         <ul>
             <li><a href="/{% if default_language.language is ne language.language %}{{ language.language }}{% endif %}"{% if active_nav=="home" %} role="button"{% endif %}>{{_('nav_home')}}</a></li>
