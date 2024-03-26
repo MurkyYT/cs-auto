@@ -5,7 +5,7 @@
 <hr>
 {% for changelog in changelogs %}
 <article> {# TODO: Version IDs + permanent links next to headers #}
-    {{ changelog }}
+    {{ changelog.html_body }}
 </article>
 {% endfor %}
 </main>

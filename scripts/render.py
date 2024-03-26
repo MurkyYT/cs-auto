@@ -82,10 +82,12 @@ class Render:
         return self.engine.get_template(self.get_filename("index")).render(active_nav="home", faq=faq_html, canon_link=self.base_url if self.lang is DEFAULT_LANGUAGE else self.base_url.copy_with(path=self.base_url.path + self.lang.language), latest_version=latest_version)
     
     def render_changelog(self):
-        changelog_md = self.provider.get_changelog()
-        logger.debug(f"Got {len(changelog_md)} changelogs")
-        changelog_html = list(map(self.markdown.render, changelog_md))
-        return self.engine.get_template(self.get_filename("changelog")).render(active_nav="changelog", changelogs=changelog_html, canon_link=self.base_url.join("/changelog"))
+        changelogs = self.provider.get_changelog()
+        changelogs = list(filter(lambda x: x.body, changelogs))
+        logger.debug(f"Got {len(changelogs)} changelogs")
+        for x in changelogs:
+            x.html_body = self.markdown.render(x.body)
+        return self.engine.get_template(self.get_filename("changelog")).render(active_nav="changelog", changelogs=changelogs, canon_link=self.base_url.join("/changelog"))
     
     def just_render(self, name: str, path: str):
         return self.engine.get_template(self.get_filename(name)).render(active_nav=name, canon_link=self.base_url.join(path))

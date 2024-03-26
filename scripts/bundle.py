@@ -4,8 +4,10 @@ import os
 from babel import Locale
 from loguru import logger
 
+from env import CSAUTO_LIVE_PROVIDER
 from shared import Paths, SUPPORTED_LANGUAGES, DEFAULT_LANGUAGE
 from render import Render
+from get_data import LocalFileProvider, RawGithubProvider
 
 import typing as t
 
@@ -21,7 +23,7 @@ class Page:
     only_original_language: bool = False
 
 def build_lang(folder_path, lang: Locale):
-    rend = Render(lang=lang)
+    rend = Render(lang=lang, provider_class={"local": LocalFileProvider, "github": RawGithubProvider}[CSAUTO_LIVE_PROVIDER])
     
     pages: list[Page] = [
         Page("index.html", rend.render_index),
