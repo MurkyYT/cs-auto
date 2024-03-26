@@ -28,7 +28,7 @@ class URLS:
                                    "ru": GH_REPO.join(f"blob/{DEFAULT_BRANCH}/Docs/README_ru.md")}
     
     RAW_GH = URL(f"https://raw.githubusercontent.com/{CSAUTO_GH_REPO}/{DEFAULT_BRANCH}/")
-    RAW_CHANGELOG = RAW_GH.join("Docs/FullChangelog.MD")
+    RAW_CHANGELOG = RAW_GH.join("Data/full_changelog.json")
     RAW_COLORS = RAW_GH.join("Data/colors")
     RAW_README: dict[str, URL] = {"en": RAW_GH.join("README.md"),
                                   "ru": RAW_GH.join("Docs/README_ru.md")}
