@@ -79,7 +79,7 @@ class Render:
     def render_index(self):
         faq_html = self.markdown.render(self.provider.get_faq(self.lang.language))
         latest_version = self.provider.get_version()
-        return self.engine.get_template(self.get_filename("index")).render(active_nav="home", faq=faq_html, canon_link=self.base_url, latest_version=latest_version)
+        return self.engine.get_template(self.get_filename("index")).render(active_nav="home", faq=faq_html, canon_link=self.base_url if self.lang is DEFAULT_LANGUAGE else self.base_url.copy_with(path=self.base_url.path + self.lang.language), latest_version=latest_version)
     
     def render_changelog(self):
         changelog_md = self.provider.get_changelog()
