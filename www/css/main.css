@@ -189,7 +189,7 @@ dialog footer p {
     border-radius: 0.25em;
 }
 
-.DownloadColumn a {  /* TODO: change bg color to match light theme */
+.DownloadColumn a {
     width: fit-content;
     height: fit-content;
     padding: 10px;
