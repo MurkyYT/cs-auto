@@ -128,7 +128,7 @@ class GHReferenceRenderer(GHClient):
                     nodes.append(token)
 
                     token = Token("text", "", 0)
-                    token.content = f"#{data['number']}"
+                    token.content = f"#{data['number']}" if self.default_repo else f"{ref_match.group('owner')}/{ref_match.group('repo')}#{data['number']}"
                     token.level = level
                     nodes.append(token)
 
