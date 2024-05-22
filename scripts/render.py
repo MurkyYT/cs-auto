@@ -1,20 +1,24 @@
+from dotenv import load_dotenv
+load_dotenv()
+
 from babel.support import Translations, NullTranslations
 from babel import Locale
 from httpx import URL
 from markdown_it import MarkdownIt
 from markdown_it.presets import commonmark
 from markdown_it.utils import PresetType
-from loguru import logger
 import json
 from jinja2 import Environment, FileSystemLoader
 
 from anchor import anchors_plugin
-from env import CSAUTO_BASE_URL, CSAUTO_DISABLE_META
+from env import CSAUTO_BASE_URL, CSAUTO_DISABLE_META, CSAUTO_GH_REPO
 from shared import DEFAULT_LANGUAGE, Paths, LANGUAGES_IDS_STR_LITERAL, compile_translations, SUPPORTED_LANGUAGES
 from github_md import GHReferenceRenderer
 from get_data import BaseDataProvider, RawGithubProvider
 
 import typing as t
+
+from loguru import logger
 
 
 class gfm_like_custom:  # noqa: N801
@@ -51,7 +55,7 @@ class Render:
         self.translation = Translations.load(dirname=Paths.LANGUAGES_DIR, locales=self.lang)
         self.provider: BaseDataProvider = provider_class()
         self.markdown = MarkdownIt()
-        self.gh_ref = GHReferenceRenderer()
+        self.gh_ref = GHReferenceRenderer(default_repo=CSAUTO_GH_REPO, cache_path=Paths.GH_CACHE)
         self.gh_ref.cache_all()
         self.markdown.use(self.gh_ref)
         self.markdown.use(anchors_plugin)

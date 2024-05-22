@@ -12,6 +12,7 @@ import typing as t
 class Paths:
     SCRIPTS_DIR = os.path.dirname(__file__)
     ROOT_DIR = os.path.dirname(SCRIPTS_DIR)
+    GH_CACHE = os.path.join(ROOT_DIR, "gh_cache.json")
     TEMPLATES_DIR = os.path.join(ROOT_DIR, "templates")
     WEB_ROOT_DIR = os.path.join(ROOT_DIR, "www")
     LANGUAGES_DIR = os.path.join(ROOT_DIR, "languages")
