@@ -17,7 +17,6 @@ Source code of [CSAuto website](https://csauto.vercel.app). ( [CSAuto repo](http
 ### Deserves mention
 
 - [Font Awesome](https://fontawesome.com/) svg icons
-- [Scoop svg logo](https://github.com/ScoopInstaller/Scoop/discussions/5516) by @xmha97
 
 ## Development
 
