@@ -29,3 +29,14 @@ jobs:
                 add: 'www'
                 default_author: github_actions
                 message: "task(html): build static html"
+            - name: "Send Notification on Fail"
+              if: failure()
+              uses: sarisia/actions-status-discord@v1
+              with:
+                webhook: ${{ secrets.DISCORD_WEBHOOK }}
+                status: ${{ job.status }}
+                title: "web build"
+                description: "build static html files"
+                username: "GitHub :>"
+                url: "https://github.com/MurkyYT/cs-auto"
+                nofail: true
