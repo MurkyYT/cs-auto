@@ -131,6 +131,11 @@ section.FeaturesSection {
 
 .feature video, .feature img {
     width: 100%;
+
+    border-radius: 20px;
+    overflow: hidden;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
 }
 
 .feature h2 {
@@ -197,7 +202,7 @@ dialog footer p {
 
 .DownloadColumn a {
     width: fit-content;
-    height: fit-content;
+    height: 100%;
     padding: 10px;
 }
 
