@@ -197,7 +197,7 @@ dialog footer p {
 
 .DownloadColumn a {
     width: fit-content;
-    height: fit-content;
+    height: 100%;
     padding: 10px;
 }
 
