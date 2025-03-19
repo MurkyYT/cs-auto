@@ -6,7 +6,7 @@ on:
     workflow_dispatch:
 
 env:
-    PYTHON_VER: "3.12.2"
+    PYTHON_VER: "3.12.9"
     POETRY_VER: "1.7.1"
 
 jobs:
