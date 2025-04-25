@@ -103,17 +103,18 @@
                         <a role="button" href="https://scoop.sh/#/apps?q=csauto&id=237eb9768ee66aa0b3500e3e2b0086e4755f0c86">                            
                             {% include "svg/scoop.svg" %}
                             Scoop</a>
-                        <code>
+                        {# TODO: find a way to do a multi-line #}
+                        <code data-clipboard-text="scoop bucket add games; scoop install csauto">
                             scoop bucket add games<br>scoop install csauto
                         </code>
                     </div>
                     <div role="group" id="winget">
-                        <a role="button" href="https://github.com/microsoft/winget-pkgs/tree/master/manifests/m/MurkyYT/CSAuto">
+                        <a role="button" href="https://winstall.app/apps/MurkyYT.CSAuto">
                             <!-- Since, no WinGet svg, using Windows one. https://github.com/microsoft/winget-cli/issues/4691 -->
                             {% include "svg/windows.svg" %}
                             WinGet
                         </a>
-                        <code>
+                        <code data-clipboard-text="winget install --id=MurkyYT.CSAuto -e">
                             winget install --id=MurkyYT.CSAuto -e
                         </code>
                     </div>
@@ -126,4 +127,38 @@
             </div>
         </section>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script>
+    <script defer>
+            cljs = new ClipboardJS('code');
+            function setupCodeblocks() {
+                let codes = document.querySelectorAll(".downloads code");
+                for (var i = 0; i < codes.length; i++) {
+                    codes[i].addEventListener('mouseleave', clearTooltip);
+                    codes[i].addEventListener('blur', clearTooltip);
+                    codes[i].setAttribute("data-tooltip", "{{ _('copy_desc') }}")
+                }
+
+                cljs.clearSelection = function() {};
+                cljs.on('success', function(e) {
+                    console.log(e);
+                    e.trigger.setAttribute("data-tooltip", "{{ _('copy_success') }}");
+                });
+                cljs.on('error', function(e) {
+                    e.trigger.setAttribute("data-tooltip", "{{ _('copy_error') }}");
+                    // Remove listeners to let user handle the copy
+                    cljs.destroy();
+                });
+
+                function clearTooltip(e) {
+                    e.currentTarget.setAttribute("data-tooltip", "{{ _('copy_desc') }}");
+                }
+            }
+
+            // checking if current device is mobile or not
+            // https://stackoverflow.com/a/71030087/20533050
+            const isMobile = localStorage.mobile || window.navigator.maxTouchPoints > 1;
+            const isClipboardJSDefined = typeof cljs !== 'undefined';
+
+            if (!isMobile && isClipboardJSDefined) setupCodeblocks();
+    </script>
 {% endblock %}

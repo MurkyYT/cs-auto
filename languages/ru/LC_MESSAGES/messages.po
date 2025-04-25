@@ -141,14 +141,14 @@ msgstr "Пример автоматической паузы Spotify"
 
 #: templates/index.jinja:42
 msgid "h2_spotify"
-msgstr "Авто пауза/воспроизведение Spotify"
+msgstr "Авто пауза/воспроизведение медиа"
 
 #: templates/index.jinja:44
 msgid "desc_spotify"
 msgstr ""
-"Ставит на паузу Spotify, пока вы живы<br>\n"
+"Ставит на паузу Spotify (или любой другой медиаплеер), пока вы живы<br>\n"
 "А после смерти, CSAuto вновь запустит воспроизведение<br>\n"
-"Так можно спокойно слушать музыки и слышать игру, когда это нужно"
+"Так можно спокойно слушать музыку и слышать игру, когда это нужно"
 
 #: templates/index.jinja:50
 msgid "h2_autoreload"
@@ -197,3 +197,12 @@ msgstr "Все версии"
 #: templates/index.jinja:99
 msgid "h4_app_managers"
 msgstr "Менеджеры приложений"
+
+msgid "copy_desc"
+msgstr "Скопировать"
+
+msgid "copy_success"
+msgstr "Скопировано!"
+
+msgid "copy_error"
+msgstr "Не удалось скопировать :("
