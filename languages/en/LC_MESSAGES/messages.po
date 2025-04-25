@@ -197,3 +197,12 @@ msgstr "All versions"
 #: templates/index.jinja:99
 msgid "h4_app_managers"
 msgstr "App Managers"
+
+msgid "copy_desc"
+msgstr "Copy"
+
+msgid "copy_success"
+msgstr "Success!"
+
+msgid "copy_error"
+msgstr "Got error on copy :("

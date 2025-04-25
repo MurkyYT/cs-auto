@@ -135,22 +135,22 @@
                 for (var i = 0; i < codes.length; i++) {
                     codes[i].addEventListener('mouseleave', clearTooltip);
                     codes[i].addEventListener('blur', clearTooltip);
-                    codes[i].setAttribute("data-tooltip", "Copy")
+                    codes[i].setAttribute("data-tooltip", "{{ _('copy_desc') }}")
                 }
 
                 cljs.clearSelection = function() {};
                 cljs.on('success', function(e) {
                     console.log(e);
-                    e.trigger.setAttribute("data-tooltip", "Success!");
+                    e.trigger.setAttribute("data-tooltip", "{{ _('copy_success') }}");
                 });
                 cljs.on('error', function(e) {
-                    e.trigger.setAttribute("data-tooltip", "Can't copy!");
+                    e.trigger.setAttribute("data-tooltip", "{{ _('copy_error') }}");
                     // Remove listeners to let user handle the copy
                     cljs.destroy();
                 });
 
                 function clearTooltip(e) {
-                    e.currentTarget.setAttribute("data-tooltip", "Copy");
+                    e.currentTarget.setAttribute("data-tooltip", "{{ _('copy_desc') }}");
                 }
             }
 
