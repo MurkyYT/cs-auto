@@ -141,12 +141,12 @@ msgstr "Auto pause Spotify example"
 
 #: templates/index.jinja:42
 msgid "h2_spotify"
-msgstr "Auto pause/resume Spotify song"
+msgstr "Auto pause/resume song"
 
 #: templates/index.jinja:44
 msgid "desc_spotify"
 msgstr ""
-"Automatically pauses Spotify song while you're alive<br>\n"
+"Automatically pauses song on Spotify (or any media player) while you're alive<br>\n"
 "When you die, CSAuto will resume the song<br>\n"
 "That way you can listen to a song and still hear the game when needed"
 
