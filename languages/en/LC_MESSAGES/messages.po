@@ -158,7 +158,7 @@ msgstr "Auto reload weapon"
 msgid "desc_autoreload"
 msgstr ""
 "Automatically reloads your weapon when you have 0 bullets left<br>\n"
-"Can continue spraying afterwards, sometimes it's lagging out"
+"Can continue spraying afterwards"
 
 #: templates/index.jinja:56
 msgid "alt_autoreload_video"
