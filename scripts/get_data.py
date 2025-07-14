@@ -81,7 +81,11 @@ class RawGithubProvider(BaseDataProvider):
     
     @cache
     def get_version(self) -> str:
-        raw_resp = httpx.get(URLS.RELEASES_API, headers={"X-GitHub-Api-Version": "2022-11-28"})
+        token = os.environ.get("GITHUB_TOKEN")
+        if token:
+            raw_resp = httpx.get(URLS.RELEASES_API, headers={"X-GitHub-Api-Version": "2022-11-28", "Authorization": "Bearer " + token})
+        else
+            raw_resp = httpx.get(URLS.RELEASES_API, headers={"X-GitHub-Api-Version": "2022-11-28"})
         logger.debug(f"Releases response: {raw_resp.status_code}")
         resp = raw_resp.json()
         return max(resp, key=lambda x: datetime.fromisoformat(x['created_at']))['tag_name']
