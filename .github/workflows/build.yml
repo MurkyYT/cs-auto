@@ -21,6 +21,8 @@ jobs:
                 python-version: ${{ env.PYTHON_VER }}
                 poetry-version: ${{ env.POETRY_VER }}
             - name: Build
+              env:
+                GITHUB_TOKEN: ${{ secrets.GH_TOKEN }
               run: |
                 poetry run python scripts/bundle.py
             - name: "Commit & Push"
