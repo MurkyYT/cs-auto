@@ -33,6 +33,22 @@ class GHClient:
     def is_this_default_repo(self, repo_owner: str, repo: str):
         return f"{repo_owner}/{repo}" == self.default_repo
     
+    @staticmethod
+    def parse_link_header(headers) -> dict[str, str]:
+        links = {}
+        if "link" in headers and isinstance(headers["link"], str):
+            linkHeaders = headers["link"].split(", ")
+            for linkHeader in linkHeaders:
+                url, rel, *rest = linkHeader.split("; ")
+                url = url[1:-1]
+                rel = rel[5:-1]
+                links[rel] = url
+        return links
+    
+    @classmethod
+    def get_url_from_link(cls, link: str) -> str:
+        return cls.parse_link_header({"link": link}).get("next", None)
+    
     def list_issues(self, page: int = 1, per_page: int = 30, repo: t.Optional[str] = None):
         if repo is None:
             repo = self.default_repo
@@ -57,9 +73,13 @@ class GHClient:
             repo = self.default_repo
         logger.trace(f"Get all issues from {repo}")
         res = list()
-        while "link" in (resp := self.client.get(f"https://api.github.com/repos/{repo}/issues", params=dict(state="all"))).headers:
+        link = f"https://api.github.com/repos/{repo}/issues"
+        resp = self.client.get(link, params=dict(state="all"))
+        while "next" in resp.links:
             resp.raise_for_status()
             res.extend(resp.json())
+            link = resp.links["next"]['url']
+            resp = self.client.get(link, params=dict(state="all"))
         resp.raise_for_status()
         res.extend(resp.json())
         return res
@@ -89,9 +109,11 @@ class GHClient:
             repo = self.default_repo
         logger.trace(f"Get all PRs from {repo}")
         res = list()
-        while "link" in (resp := self.client.get(f"https://api.github.com/repos/{repo}/pulls", params=dict(state="all"))).headers:
+        link = f"https://api.github.com/repos/{repo}/pulls"
+        while "link" in (resp := self.client.get(link, params=dict(state="all"))).headers:
             resp.raise_for_status()
             res.extend(resp.json())
+            link = self.get_url_from_link(resp.headers["link"])
         resp.raise_for_status()
         res.extend(resp.json())
         return res
@@ -110,9 +132,11 @@ class GHClient:
             repo = self.default_repo
         logger.trace(f"Get all contributors from {repo}")
         res = list()
-        while "link" in (resp := self.client.get(f"https://api.github.com/repos/{repo}/contributors")).headers:
+        link = f"https://api.github.com/repos/{repo}/contributors"
+        while "link" in (resp := self.client.get(link, params=dict(state="all"))).headers:
             resp.raise_for_status()
             res.extend(resp.json())
+            link = self.get_url_from_link(resp.headers["link"])
         resp.raise_for_status()
         res.extend(resp.json())
         return res
@@ -166,10 +190,14 @@ class GHClient:
         return issue
     
     def cache_all(self):
-        issues = self.list_all_issues()
+        # TODO: fix pagination !IMPORTANT
+        # issues = self.list_all_issues()
+        issues = self.list_issues(per_page=100)
         self.cache.extend(tuple(map(lambda x: dict(x, **dict(_type="issue")), issues)))
-        pulls = self.list_all_pulls()
+        # pulls = self.list_all_pulls()
+        pulls = self.list_pulls(per_page=100)
         self.cache.extend(tuple(map(lambda x: dict(x, **dict(_type="pull")), pulls)))
+        # contributors = self.list_all_contributors()
         contributors = self.list_all_contributors()
         self.cache.extend(tuple(map(lambda x: dict(x, **dict(_type="user")), contributors)))
 
