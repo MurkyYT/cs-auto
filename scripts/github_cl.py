@@ -53,7 +53,9 @@ class GHClient:
         logger.trace(f"Get all issues from {repo}")
         res = list()
         while "link" in (resp := self.client.get(f"https://api.github.com/repos/{repo}/issues", params=dict(state="all"))).headers:
+            resp.raise_for_status()
             res.extend(resp.json())
+        resp.raise_for_status()
         res.extend(resp.json())
         return res
     
@@ -63,6 +65,7 @@ class GHClient:
         logger.trace(f"List PRs {repo} (page={page}, per_page={per_page})")
         resp = self.client.get(f"https://api.github.com/repos/{repo}/pulls",
                                params=dict(page=page, per_page=per_page, state="all"))
+        resp.raise_for_status()
         return resp.json()
     
     def get_pull(self, pull_number: int, repo: t.Optional[str]):
@@ -82,7 +85,9 @@ class GHClient:
         logger.trace(f"Get all PRs from {repo}")
         res = list()
         while "link" in (resp := self.client.get(f"https://api.github.com/repos/{repo}/pulls", params=dict(state="all"))).headers:
+            resp.raise_for_status()
             res.extend(resp.json())
+        resp.raise_for_status()
         res.extend(resp.json())
         return res
     
@@ -92,6 +97,7 @@ class GHClient:
         logger.trace(f"List contributors {repo} (page={page}, per_page={per_page})")
         resp = self.client.get(f"https://api.github.com/repos/{repo}/contributors",
                                params=dict(page=page, per_page=per_page))
+        resp.raise_for_status()
         return resp.json()
     
     def list_all_contributors(self, repo: t.Optional[str] = None):
@@ -100,7 +106,9 @@ class GHClient:
         logger.trace(f"Get all contributors from {repo}")
         res = list()
         while "link" in (resp := self.client.get(f"https://api.github.com/repos/{repo}/contributors")).headers:
+            resp.raise_for_status()
             res.extend(resp.json())
+        resp.raise_for_status()
         res.extend(resp.json())
         return res
     
@@ -109,6 +117,7 @@ class GHClient:
             repo = self.default_repo
         logger.trace(f"Get latest release from {repo}")
         resp = self.client.get(f"https://api.github.com/repos/{repo}/releases/latest")
+        resp.raise_for_status()
         return resp.json()
     
     def get_user(self, user: str, cached=True):
