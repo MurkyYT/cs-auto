@@ -7,7 +7,8 @@ import json
 import httpx
 from loguru import logger
 
-from shared import URLS, LANGUAGES_IDS_STR_LITERAL, DEFAULT_LANGUAGE_ID
+from shared import URLS, LANGUAGES_IDS_STR_LITERAL, DEFAULT_LANGUAGE_ID, GITHUB_TOKEN
+
 
 import typing as t
 
@@ -81,7 +82,10 @@ class RawGithubProvider(BaseDataProvider):
     
     @cache
     def get_version(self) -> str:
-        raw_resp = httpx.get(URLS.RELEASES_API, headers={"X-GitHub-Api-Version": "2022-11-28"})
+        req_headers = {"X-GitHub-Api-Version": "2022-11-28"}
+        if GITHUB_TOKEN:
+            req_headers["Authorization"] = "Bearer " + GITHUB_TOKEN
+        raw_resp = httpx.get(URLS.RELEASES_API, headers=req_headers)
         logger.debug(f"Releases response: {raw_resp.status_code}")
         resp = raw_resp.json()
         return max(resp, key=lambda x: datetime.fromisoformat(x['created_at']))['tag_name']

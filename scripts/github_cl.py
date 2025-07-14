@@ -7,6 +7,8 @@ from loguru import logger
 import typing as t
 
 
+GH_TOKEN_ENV = "GITHUB_TOKEN"
+
 class GHClient:
     def __init__(self, default_repo: str, token: t.Optional[str] = None,
                  load_cache: bool = False, cache_path: t.Optional[str | os.PathLike] = None) -> None:
@@ -14,6 +16,9 @@ class GHClient:
         self.load_cache, self.cache_path = load_cache, cache_path
         headers = {"X-GitHub-Api-Version": "2022-11-28",
                    "accept": "application/vnd.github+json"}
+        if token is None:
+            if GH_TOKEN_ENV in os.environ:
+                token = os.environ[GH_TOKEN_ENV]
         if token:
             headers["Authorization"] = "Bearer " + token
         self.client = Client(headers=headers, follow_redirects=True)
@@ -170,7 +175,7 @@ class GHClient:
 
 
 if __name__ == "__main__":
-    gh = GHClient("MurkyYT/CSAuto", os.environ.get("GITHUB_TOKEN"))
+    gh = GHClient("MurkyYT/CSAuto")
     gh.cache_all()
     with open(os.path.join("gh_cache.json"), mode="w+", encoding="utf-8") as f:
         json.dump(gh.cache, f, indent=4)

@@ -12,9 +12,12 @@ except ImportError:
 def _log_value_decor(func):
     def decor(*args, log_value: bool = True, **kwargs):
         name = kwargs.get("name") or args[0]
+        is_secret = kwargs.get("secret", False)
         val = func(*args, **kwargs)
-        if log_value:
+        if log_value and not is_secret:
             logger.debug(f"{name}={val}")
+        elif log_value and is_secret:
+            logger.debug(f"{name} is{' not' if val!=kwargs.get("default", "") else ''} default")
         return val
     return decor
 
@@ -40,7 +43,7 @@ class Env:
 
     @staticmethod
     @_log_value_decor
-    def str(name: str, default: str, log_value: bool = True) -> str:
+    def str(name: str, default: str| None, log_value: bool = True, secret: bool = False) -> str | None:
         return os.environ.get(name, default)
 
 
@@ -52,3 +55,5 @@ CSAUTO_BASE_URL = Env.str("CSAUTO_BASE_URL", "https://csauto.vercel.app/", log_v
 CSAUTO_GH_REPO = Env.str("CSAUTO_GH_REPO", default="MurkyYT/CSAuto", log_value=True)
 CSAUTO_DEFAULT_BRANCH = Env.str("CSAUTO_DEFAULT_BRANCH", default="master", log_value=True)
 CSAUTO_DISABLE_META = Env.bool("CSAUTO_DISABLE_META", default=False, log_value=LOG_ENV_VALUES)
+
+GITHUB_TOKEN = Env.str("GITHUB_TOKEN", default=None, secret=True, log_value=LOG_ENV_VALUES)
