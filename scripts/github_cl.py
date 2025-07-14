@@ -161,7 +161,7 @@ class GHClient:
 
 
 if __name__ == "__main__":
-    gh = GHClient("MurkyYT/CSAuto")
+    gh = GHClient("MurkyYT/CSAuto", os.environ.get("GITHUB_TOKEN"))
     gh.cache_all()
     with open(os.path.join("gh_cache.json"), mode="w+", encoding="utf-8") as f:
         json.dump(gh.cache, f, indent=4)
