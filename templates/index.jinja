@@ -105,8 +105,8 @@
                         <a role="button" href="https://scoop.sh/#/apps?q=csauto&id=237eb9768ee66aa0b3500e3e2b0086e4755f0c86">                            
                             {% include "svg/scoop.svg" %}
                             Scoop</a>
-                        {# TODO: find a way to do a multi-line #}
-                        <code data-clipboard-text="scoop bucket add games; scoop install csauto">
+                        {# XXX: cringe, but works in CMD and PowerShell #}
+                        <code data-clipboard-text="scoop bucket add games && scoop install csauto || scoop install csauto">
                             scoop bucket add games<br>scoop install csauto
                         </code>
                     </div>
