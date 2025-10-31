@@ -11,7 +11,7 @@
     <meta name="keywords" content="{{ _('meta_csauto_tags') }}">
     <meta name="description" content="{{ _('csauto_description') }}">
     <meta name="author" content="Murky">
-    {# XXX: Only home support #}
+    {# XXX: Only home support (could be bad in case if other pages will support translate too) #}
     {% if active_nav=="home" %}<!--Alternate links-->
     {% for x in languages %}<link rel="alternate" hreflang="{{ x.language }}" href="{{ base_url }}{% if default_language.language is ne x.language %}{{ x.language }}{% endif %}" />
     {% endfor %}{% endif %}
@@ -89,6 +89,8 @@
             <li><a href="/{% if default_language.language is ne language.language %}{{ language.language }}{% endif %}"{% if active_nav=="home" %} role="button"{% endif %}>{{_('nav_home')}}</a></li>
             <li><a href="/changelog"{% if active_nav=="changelog" %} role="button"{% endif %}>{{_('nav_changelog')}}</a></li>
             <li><label role="link" for="about-modal-open">{{_('nav_about')}}</label></li>
+            {# XXX: Only home support (could be bad in case if other pages will support translate too) #}
+            {% if active_nav=="home" %}
             <li>
                 <details class="dropdown languages">
                     <summary>{{ language.get_language_name().capitalize() }}</summary>
@@ -97,6 +99,7 @@
                     </ul>
                 </details>
             </li>
+            {% endif %}
         </ul>
     </nav>
     {% endblock %}
