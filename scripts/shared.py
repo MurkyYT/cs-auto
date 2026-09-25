@@ -3,7 +3,7 @@ import os
 
 import babel
 from babel.messages import frontend as babel_utils
-from httpx import URL
+from httpx2 import URL
 
 from env import CSAUTO_GH_REPO, CSAUTO_DEFAULT_BRANCH as DEFAULT_BRANCH, GITHUB_TOKEN
 
