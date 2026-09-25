@@ -1,7 +1,7 @@
 import os
 import json
 
-from httpx import Client, URL
+from httpx2 import Client, URL
 from loguru import logger
 
 import typing as t

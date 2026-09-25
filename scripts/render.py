@@ -3,7 +3,7 @@ load_dotenv()
 
 from babel.support import Translations, NullTranslations
 from babel import Locale
-from httpx import URL
+from httpx2 import URL
 from markdown_it import MarkdownIt
 from markdown_it.presets import commonmark
 from markdown_it.utils import PresetType

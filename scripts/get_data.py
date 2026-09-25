@@ -4,7 +4,7 @@ from functools import cache
 import os
 import json
 
-import httpx
+import httpx2
 from loguru import logger
 
 from shared import URLS, LANGUAGES_IDS_STR_LITERAL, DEFAULT_LANGUAGE_ID, GITHUB_TOKEN
@@ -21,7 +21,7 @@ except ImportError:
 @dataclass
 class ChangelogItem:
     body: str             # filtered_body
-    url: str | httpx.URL  # html_url
+    url: str | httpx2.URL  # html_url
     version: str          # tag_name
     
     html_body: t.Optional[str] = None
@@ -63,12 +63,12 @@ class BaseDataProvider:
 class RawGithubProvider(BaseDataProvider):
     @cache
     def get_readme(self, lang: LANGUAGES_IDS_STR_LITERAL = DEFAULT_LANGUAGE_ID) -> str:
-        resp = httpx.get(url=URLS.RAW_README[lang])
+        resp = httpx2.get(url=URLS.RAW_README[lang])
         return resp.text
     
     @cache
     def get_changelog_json(self) -> list:
-        resp = httpx.get(url=URLS.RAW_CHANGELOG)
+        resp = httpx2.get(url=URLS.RAW_CHANGELOG)
         return resp.json()
     
     def get_changelog(self) -> list[ChangelogItem]:
@@ -77,7 +77,7 @@ class RawGithubProvider(BaseDataProvider):
     
     @cache
     def get_colors(self) -> str:
-        resp = httpx.get(url=URLS.RAW_COLORS)
+        resp = httpx2.get(url=URLS.RAW_COLORS)
         return resp.text
     
     @cache
@@ -85,7 +85,7 @@ class RawGithubProvider(BaseDataProvider):
         req_headers = {"X-GitHub-Api-Version": "2022-11-28"}
         if GITHUB_TOKEN:
             req_headers["Authorization"] = "Bearer " + GITHUB_TOKEN
-        raw_resp = httpx.get(URLS.RELEASES_API, headers=req_headers)
+        raw_resp = httpx2.get(URLS.RELEASES_API, headers=req_headers)
         logger.debug(f"Releases response: {raw_resp.status_code}")
         resp = raw_resp.json()
         return max(resp, key=lambda x: datetime.fromisoformat(x['created_at']))['tag_name']
